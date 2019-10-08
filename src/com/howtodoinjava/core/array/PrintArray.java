@@ -42,7 +42,7 @@ public class PrintArray
 		// Print the array using Arrays.toString()
 		System.out.println(Arrays.toString(arrayOfArray));
 
-		// Print the array using Arrays.deepToString() - "RECOMMENDED for multi-dimensional array"
+		// Print the array using Arrays.deepToString() -  "RECOMMENDED for multi-dimensional array"
 		System.out.println(Arrays.deepToString(arrayOfArray));
 	}
 }
