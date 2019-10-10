@@ -7,4 +7,5 @@
 3. [Java – Array Copy](https://howtodoinjava.com/array/array-copy/)
 4. [Java - Array Deep Copy](https://howtodoinjava.com/array/java-array-deep-copy-example/)
 5. [Java - Copy Array Range](https://howtodoinjava.com/array/copy-array-range/)
+6. [Java - Remove duplicate elements from Array](https://howtodoinjava.com/array/array-remove-duplicate-elements/)
 
