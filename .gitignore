@@ -25,4 +25,5 @@ bin/
 
 # Misc
 *.swp
+.metadata
 release.properties
