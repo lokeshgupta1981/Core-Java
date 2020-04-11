@@ -3,5 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="E:/devsetup/gitworkspace/Core-Java/src/lib/commons-lang3-3.9.jar"/>
+	<classpathentry kind="lib" path="E:/devsetup/gitworkspace/Core-Java/src/lib/guava-28.2-jre.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
