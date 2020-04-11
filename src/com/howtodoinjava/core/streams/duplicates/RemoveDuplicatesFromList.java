@@ -12,12 +12,14 @@ public class RemoveDuplicatesFromList
 {
 	public static void main(String[] args) 
 	{
+		Integer[] origArray = new Integer[] { 1, 2, 4, 9, 7, 3, 4, 5, 8, 6, 1, 7, 8 };
+		
 		// ArrayList with duplicate elements
         ArrayList<Integer> numbersList 
-        	= new ArrayList<>(Arrays.asList(1, 1, 2, 3, 3, 3, 4, 5, 6, 6, 6, 7, 8));
+        	= new ArrayList<>();
         
         //1 - remove duplicates
-        List<Integer> listWithoutDuplicates = numbersList.stream()
+        List<Integer> listWithoutDuplicates = Arrays.asList(origArray).stream()
     			.distinct()
     			.collect(Collectors.toList());
      
