@@ -1,6 +1,7 @@
 # Related Tutorials
 
 1. [Java Date and Time Tutorial](https://howtodoinjava.com/java-date-and-time-apis/)
-2. [Java – Get Next and Previous Date](https://howtodoinjava.com/java/date-time/java8-next-previous-date/)
-3. [Java – TemporalQuery](https://howtodoinjava.com/java/date-time/temporalquery/)
+2. [Java 8 – Get Next and Previous Date](https://howtodoinjava.com/java/date-time/java8-next-previous-date/)
+3. [Java 8 – TemporalQuery](https://howtodoinjava.com/java/date-time/temporalquery/)
 4. [Java 8 – DayOfWeek](https://howtodoinjava.com/java/date-time/find-dayofweek/)
+5. [Java 8 – Date Comparison](https://howtodoinjava.com/java/date-time/compare-dates/)
