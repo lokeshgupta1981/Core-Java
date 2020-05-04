@@ -5,3 +5,4 @@
 3. [Java 8 – TemporalQuery](https://howtodoinjava.com/java/date-time/temporalquery/)
 4. [Java 8 – DayOfWeek](https://howtodoinjava.com/java/date-time/find-dayofweek/)
 5. [Java 8 – Date Comparison](https://howtodoinjava.com/java/date-time/compare-dates/)
+6. [Java 8 – Current Date and Time](https://howtodoinjava.com/java/date-time/current-date-time/)
