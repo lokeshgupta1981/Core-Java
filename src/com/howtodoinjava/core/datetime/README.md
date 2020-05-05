@@ -8,3 +8,4 @@
 6. [Java 8 – Current Date and Time](https://howtodoinjava.com/java/date-time/current-date-time/)
 7. [Java 8 – Add or subtract N business days](https://howtodoinjava.com/java/date-time/add-subtract-business-days/)  
 8. [Java 8 - Calculate business days between two dates](https://howtodoinjava.com/java/date-time/calculate-business-days/) 
+9. [Java 8 - Calculate days between two dates](https://howtodoinjava.com/java/date-time/calculate-days-between-dates/)
