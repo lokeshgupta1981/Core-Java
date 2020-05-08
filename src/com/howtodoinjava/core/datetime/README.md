@@ -10,4 +10,5 @@
 8. [Java 8 - Calculate business days between two dates](https://howtodoinjava.com/java/date-time/calculate-business-days/) 
 9. [Java 8 - Calculate days between two dates](https://howtodoinjava.com/java/date-time/calculate-days-between-dates/)
 10. [Java - Get All Dates Between Two Dates](https://howtodoinjava.com/java/date-time/dates-between-two-dates/)
-11. [Guide to Date Validation in Java](https://howtodoinjava.com/java/date-time/date-validation/)
+11. [Java - Date Validation](https://howtodoinjava.com/java/date-time/date-validation/)
+12. [Java - Date Formatting](https://howtodoinjava.com/java/date-time/java-date-formatting/)
