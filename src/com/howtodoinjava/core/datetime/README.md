@@ -12,3 +12,4 @@
 10. [Java - Get All Dates Between Two Dates](https://howtodoinjava.com/java/date-time/dates-between-two-dates/)
 11. [Java - Date Validation](https://howtodoinjava.com/java/date-time/date-validation/)
 12. [Java - Date Formatting](https://howtodoinjava.com/java/date-time/java-date-formatting/)
+13. [Java 8 - TemporalAdjusters](https://howtodoinjava.com/java/date-time/java8-temporal-adjusters/)
