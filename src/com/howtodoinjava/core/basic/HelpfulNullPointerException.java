@@ -2,6 +2,7 @@ package com.howtodoinjava.core.basic;
 
 public class HelpfulNullPointerException 
 {
+	@SuppressWarnings("null")
 	public static void main(String[] args) 
 	{
 		Employee e = null;

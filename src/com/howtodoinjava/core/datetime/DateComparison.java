@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class DateComparison 
 {
+	@SuppressWarnings({ "deprecation", "static-access" })
 	public static void main(String[] args) throws InterruptedException 
 	{
 		LocalDate today = LocalDate.now();
