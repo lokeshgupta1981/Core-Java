@@ -6,6 +6,7 @@ import java.time.temporal.ChronoUnit;
 
 public class PeriodExample 
 {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) 
 	{
 		LocalDate startLocalDate = LocalDate.of(2020, 3, 12);
