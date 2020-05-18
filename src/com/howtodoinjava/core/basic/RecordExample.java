@@ -14,7 +14,6 @@ public class RecordExample {
 		
 		System.out.println(e1.id());
 		System.out.println(e1.email());
-		System.out.println(e1.minor());
 		
 		System.out.println(e1);
 		

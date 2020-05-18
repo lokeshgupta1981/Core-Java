@@ -5,3 +5,4 @@
 3. [Java 14 - Better NullPointerException](https://howtodoinjava.com/java14/helpful-nullpointerexception/)
 4. [Java 14 - Text blocks and best practices](https://howtodoinjava.com/java14/java-text-blocks/)
 5. [Java 14 - record type](https://howtodoinjava.com/java14/java-14-record-type/)
+6. [Java 14 - Pattern Matching for instanceof](https://howtodoinjava.com/java14/pattern-matching-instanceof/)
