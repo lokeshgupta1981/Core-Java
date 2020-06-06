@@ -1,8 +1,6 @@
-# Core Java Examples by HowToDoInJava.com
+# Related Tutorials on [howtodoinjava.com](https://howtodoinjava.com/)
 
-This repository hosts the core java examples and source codes written for various tutorials written in [howtodoinjava.com](https://howtodoinjava.com/).
-
-## Development Environment
-
-* JDK 8
-* Eclipse Photon
+1. [Java 11 – Files readString() API](https://howtodoinjava.com/java11/files-readstring-read-file-to-string/)
+2. [Java 11 – Files writeString() API](https://howtodoinjava.com/java11/write-string-to-file/)
+3. [Java – Read File to String](https://howtodoinjava.com/java/io/java-read-file-to-string-examples/)
+4. [Java – Write to File](https://howtodoinjava.com/java/io/java-write-to-file/)
