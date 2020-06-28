@@ -1,4 +1,4 @@
-package com.howtodoinjava.core.basic;
+package com.howtodoinjava.core.examples;
 
 import java.io.Console;
 import java.io.Reader;
