@@ -3,7 +3,7 @@ package com.howtodoinjava.csv.demoOpenCSV;
 import java.io.FileReader;
 import java.io.IOException;
 
-import au.com.bytecode.opencsv.CSVReader;
+import com.opencsv.CSVReader;
 
 public class OpenCSVExample {
 	
@@ -13,7 +13,7 @@ public class OpenCSVExample {
 		try 
 		{
 			//Get the CSVReader instance with specifying the delimiter to be used
-			reader = new CSVReader(new FileReader("C:\\Lokesh\\Setup\\workspace\\PlayingWithCSV\\src\\SampleCSVFile.csv"),',');
+			reader = new CSVReader(new FileReader("C:\\Lokesh\\Setup\\workspace\\PlayingWithCSV\\src\\SampleCSVFile.csv"));
 			String [] nextLine;
 			//Read one line at a time
 		    while ((nextLine = reader.readNext()) != null) 
