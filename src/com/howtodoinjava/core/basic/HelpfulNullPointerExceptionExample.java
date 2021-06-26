@@ -1,6 +1,6 @@
 package com.howtodoinjava.core.basic;
 
-public class HelpfulNullPointerException 
+public class HelpfulNullPointerExceptionExample
 {
 	@SuppressWarnings("null")
 	public static void main(String[] args) 

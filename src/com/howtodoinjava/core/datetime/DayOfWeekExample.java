@@ -2,8 +2,6 @@ package com.howtodoinjava.core.datetime;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
@@ -23,8 +21,6 @@ public class DayOfWeekExample {
 		textValue = getDayString(today, Locale.GERMAN);
 		
 		System.out.println(textValue);
-		
-		ZonedDateTime.now().getDayOfWeek();
 	}
 	
 	public static String getDayString(LocalDate date, Locale locale) {

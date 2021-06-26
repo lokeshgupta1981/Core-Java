@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+@SuppressWarnings("unused")
 public class Main 
 {
 	public static void main(String[] args) 

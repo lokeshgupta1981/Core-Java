@@ -2,7 +2,7 @@ package com.howtodoinjava.core.basic;
 
 import java.io.Serializable;
 
-public record EmployeeRecord(
+public record EmployeeRecord (
 		Long id, 
 		String firstName, 
 		String lastName, 

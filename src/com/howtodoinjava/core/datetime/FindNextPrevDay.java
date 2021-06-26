@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class FindNextPrevDay 
 {
-	private static final long MILLIS_IN_A_DAY = 1000 * 60 * 60 * 24;
+	private static final long MILLIS_IN_A_DAY = 1000 * 60 * 60 * 24L;
 	
 	public static void main(String[] args) 
 	{

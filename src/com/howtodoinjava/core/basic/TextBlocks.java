@@ -2,7 +2,6 @@ package com.howtodoinjava.core.basic;
 
 public class TextBlocks 
 {
-	@SuppressWarnings("preview")
 	public static void main(String[] args) 
 	{
 		String dbSchema = 	"""
@@ -15,15 +14,16 @@ public class TextBlocks
 					);                                      \s
 					""";
 		
-		System.out.println(dbSchema.replaceAll("\s", "."));
+		System.out.println(dbSchema.replace("\s", "."));
 		
 		String string = "Hello";
 		String textBlock = """
-							World""";
+							World
+							 !! """;
 		
 		String joinedString =  string + textBlock;
 		
-		joinedString = joinedString.replaceAll("\n", System.lineSeparator());
+		joinedString = joinedString.replace("\n", System.lineSeparator());
 		
 		System.out.println(joinedString);
 	}
