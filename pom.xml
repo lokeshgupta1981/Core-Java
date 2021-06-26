@@ -26,12 +26,6 @@
 			<artifactId>opencsv</artifactId>
 			<version>5.2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.12</version>
-			<scope>provided</scope>
-		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -50,9 +44,6 @@
 				<version>3.8.1</version>
 				<configuration>
 					<release>14</release>
-					<compilerArgs>
-						<arg>--enable-preview</arg>
-					</compilerArgs>
 				</configuration>
 			</plugin>
 		</plugins>

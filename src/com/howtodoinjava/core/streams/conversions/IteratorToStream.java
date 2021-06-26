@@ -16,11 +16,11 @@ public class IteratorToStream
 		Iterator<String> iterator = Arrays.asList("a", "b", "c")
 											.listIterator();
 		
-		//Works in Java 9
+		//Works in Java 9 onwards
 		
-		/*Stream.generate(() -> null)
-	    .takeWhile(x -> iterator.hasNext())
-	    .map(n -> iterator.next())
-	    .forEach(System.out::println);*/
+		Stream.generate(() -> null)
+		    .takeWhile(x -> iterator.hasNext())
+		    .map(n -> iterator.next())
+		    .forEach(System.out::println);
 	}
 }

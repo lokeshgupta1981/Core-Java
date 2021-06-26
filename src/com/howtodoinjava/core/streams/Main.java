@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 @SuppressWarnings("unused")
 public class Main 
 {
@@ -41,12 +38,17 @@ public class Main
 	}
 }
 
-@Data
-@AllArgsConstructor
 class Employee 
 {
 	private long id;
 	private String name;
 	private int age;
 	private double salary;
+	public Employee(long id, String name, int age, double salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.salary = salary;
+	}
 }
