@@ -54,7 +54,7 @@ public class GetAllDatesBetweenTwoDates
 	
 	public static List<Date> getDaysBetweenDates(Date startdate, Date enddate)
 	{
-	    List<Date> dates = new ArrayList<Date>();
+	    List<Date> dates = new ArrayList<>();
 	    Calendar calendar = new GregorianCalendar();
 	    calendar.setTime(startdate);
 

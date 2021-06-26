@@ -36,7 +36,7 @@ public class CalculateAverage
 		List<Double> list = new ArrayList<>(List.of(1.1, 2.2, 3.3, 4.4, 5.5));
 		
 		Double averageValue = list.stream()
-								.mapToDouble((x) -> x)
+								.mapToDouble(x -> x)
 								.average()
 								.orElse(Double.NaN);
 		

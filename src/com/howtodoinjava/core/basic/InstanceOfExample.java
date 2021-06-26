@@ -1,5 +1,6 @@
 package com.howtodoinjava.core.basic;
 
+@SuppressWarnings("unused")
 public class InstanceOfExample 
 {
 	public static void main(String[] args) 

@@ -30,12 +30,12 @@ public class BusinessDaysExamples {
 	}
 
 	private static LocalDate addBusinessDays(LocalDate localDate, int days, Optional<List<LocalDate>> holidays) {
-		if (localDate == null || days <= 0 || holidays == null) {
+		if (localDate == null || days <= 0) {
 			throw new IllegalArgumentException("Invalid method argument(s) " + "to addBusinessDays(" + localDate + ","
 					+ days + "," + holidays + ")");
 		}
 
-		Predicate<LocalDate> isHoliday = date -> holidays.isPresent() ? holidays.get().contains(date) : false;
+		Predicate<LocalDate> isHoliday = date -> holidays.isPresent() && holidays.get().contains(date);
 
 		Predicate<LocalDate> isWeekend = date -> date.getDayOfWeek() == DayOfWeek.SATURDAY
 				|| date.getDayOfWeek() == DayOfWeek.SUNDAY;
@@ -51,12 +51,12 @@ public class BusinessDaysExamples {
 	}
 
 	private static LocalDate subtractBusinessDays(LocalDate localDate, int days, Optional<List<LocalDate>> holidays) {
-		if (localDate == null || days <= 0 || holidays == null) {
+		if (localDate == null || days <= 0) {
 			throw new IllegalArgumentException("Invalid method argument(s) " + "to subtractBusinessDays(" + localDate
 					+ "," + days + "," + holidays + ")");
 		}
 
-		Predicate<LocalDate> isHoliday = date -> holidays.isPresent() ? holidays.get().contains(date) : false;
+		Predicate<LocalDate> isHoliday = date -> holidays.isPresent() && holidays.get().contains(date);
 
 		Predicate<LocalDate> isWeekend = date -> date.getDayOfWeek() == DayOfWeek.SATURDAY
 				|| date.getDayOfWeek() == DayOfWeek.SUNDAY;
@@ -73,20 +73,19 @@ public class BusinessDaysExamples {
 
 	private static long countBusinessDaysBetween(LocalDate startDate, LocalDate endDate,
 			Optional<List<LocalDate>> holidays) {
-		if (startDate == null || endDate == null || holidays == null) {
+		if (startDate == null || endDate == null) {
 			throw new IllegalArgumentException("Invalid method argument(s) to countBusinessDaysBetween(" + startDate
 					+ "," + endDate + "," + holidays + ")");
 		}
 
-		Predicate<LocalDate> isHoliday = date -> holidays.isPresent() ? holidays.get().contains(date) : false;
+		Predicate<LocalDate> isHoliday = date -> holidays.isPresent() && holidays.get().contains(date);
 
 		Predicate<LocalDate> isWeekend = date -> date.getDayOfWeek() == DayOfWeek.SATURDAY
 				|| date.getDayOfWeek() == DayOfWeek.SUNDAY;
 
 		long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
 
-		long businessDays = Stream.iterate(startDate, date -> date.plusDays(1)).limit(daysBetween)
+		return Stream.iterate(startDate, date -> date.plusDays(1)).limit(daysBetween)
 				.filter(isHoliday.or(isWeekend).negate()).count();
-		return businessDays;
 	}
 }

@@ -13,48 +13,54 @@ import java.nio.file.StandardCopyOption;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
+@SuppressWarnings("unused")
 public class FileCopyExample {
 
+	private static final String SRC_FILE = "c:/temp/testoriginal.txt";
+	private static final String DEST_FILE = "c:/temp/testcopied.txt";
+	
 	private static void fileCopyUsingApacheCommons() throws IOException 
 	{
-	    File fileToCopy = new File("c:/temp/testoriginal.txt");
-	    File newFile = new File("c:/temp/testcopied.txt");
+	    File fileToCopy = new File(SRC_FILE);
+	    File newFile = new File(DEST_FILE);
 	 
 	    FileUtils.copyFile(fileToCopy, newFile);
 	 
 	    // OR
 	 
-	    IOUtils.copy(new FileInputStream(fileToCopy), new FileOutputStream(newFile));
+	    try(FileInputStream inputStream = new FileInputStream(fileToCopy);
+				FileOutputStream outputStream = new FileOutputStream(newFile))
+		{
+	    	IOUtils.copy(inputStream, outputStream);
+		}
 	}
 	
 	private static void fileCopyUsingNIOFilesClass() throws IOException 
 	{
-		Path source = Paths.get("c:/temp/testoriginal.txt");
-		Path destination = Paths.get("c:/temp/testcopied.txt");
+		Path source = Paths.get(SRC_FILE);
+		Path destination = Paths.get(DEST_FILE);
 
 		Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
 	}
 	
 	private static void fileCopyUsingNIOChannelClass() throws IOException 
 	{
-		File fileToCopy = new File("c:/temp/testoriginal.txt");
-		FileInputStream inputStream = new FileInputStream(fileToCopy);
-		FileChannel inChannel = inputStream.getChannel();
-
-		File newFile = new File("c:/temp/testcopied.txt");
-		FileOutputStream outputStream = new FileOutputStream(newFile);
-		FileChannel outChannel = outputStream.getChannel();
-
-		inChannel.transferTo(0, fileToCopy.length(), outChannel);
-
-		inputStream.close();
-		outputStream.close();
+		File fileToCopy = new File(SRC_FILE);
+		File newFile = new File(DEST_FILE);
+		
+		try(FileInputStream inputStream = new FileInputStream(fileToCopy);
+				FileOutputStream outputStream = new FileOutputStream(newFile))
+		{
+			FileChannel inChannel = inputStream.getChannel();
+			FileChannel outChannel = outputStream.getChannel();
+			inChannel.transferTo(0, fileToCopy.length(), outChannel);
+		} 
 	}
 	
 	void fileCopyUsingGuava() throws IOException 
 	{
-		File fileToCopy = new File("c:/temp/testoriginal.txt");
-		File newFile = new File("c:/temp/testcopied.txt");
+		File fileToCopy = new File(SRC_FILE);
+		File newFile = new File(DEST_FILE);
 
 		com.google.common.io.Files.copy(fileToCopy, newFile);
 	}

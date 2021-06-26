@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 
 public class DateTimeFormatterWithTimeZone 
 {
-	private static String DT_PATTERN = "dd/MM/yyyy HH:mm z";
+	private static final String DT_PATTERN = "dd/MM/yyyy HH:mm z";
 	
 	public static void main(String[] args) 
 	{
