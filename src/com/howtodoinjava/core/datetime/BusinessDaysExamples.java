@@ -74,8 +74,10 @@ public class BusinessDaysExamples {
 		return result;
 	}
 
-	private static List<LocalDate> countBusinessDaysBetween_Java8(final LocalDate startDate, final LocalDate endDate,
-			final Optional<List<LocalDate>> holidays) {
+	private static List<LocalDate> countBusinessDaysBetween_Java8(final LocalDate startDate, 
+			final LocalDate endDate,
+			final Optional<List<LocalDate>> holidays) 
+	{
 		// Validate method arguments
 		if (startDate == null || endDate == null) {
 			throw new IllegalArgumentException("Invalid method argument(s) to countBusinessDaysBetween (" + startDate
@@ -92,9 +94,6 @@ public class BusinessDaysExamples {
 		// Get all days between two dates
 		long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
 
-		// List<LocalDate> businessDays = startDate.datesUntil(endDate)
-		// .filter(isWeekend.or(isHoliday))
-		// .collect(Collectors.toList());
 
 		// Iterate over stream of all dates and check each day against any weekday or
 		// holiday
