@@ -1,17 +1,19 @@
 package com.howtodoinjava.core.streams;
 
+import java.time.LocalDate;
+
 class Employee {
     private long id;
     private String name;
-    private int age;
+    private LocalDate dateOfBirth;
     private double salary;
 
-    public Employee(final long id, final String name, final int age,
-        final double salary) {
+    public Employee(final long id, final String name,
+        final LocalDate dateOfBirth, final double salary) {
         super();
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
         this.salary = salary;
     }
 
@@ -31,14 +33,6 @@ class Employee {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(final int age) {
-        this.age = age;
-    }
-
     public double getSalary() {
         return salary;
     }
@@ -47,9 +41,17 @@ class Employee {
         this.salary = salary;
     }
 
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(final LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
     @Override
     public String toString() {
-        return "Employee [id=" + id + ", name=" + name + ", age=" + age
-            + ", salary=" + salary + "]";
+        return "Employee [id=" + id + ", name=" + name + ", dateOfBirth="
+            + dateOfBirth + ", salary=" + salary + "]";
     }
 }
