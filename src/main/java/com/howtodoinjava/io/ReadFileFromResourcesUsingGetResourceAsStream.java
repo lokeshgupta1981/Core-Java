@@ -5,11 +5,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class ReadFileFromClasspath {
+public class ReadFileFromResourcesUsingGetResourceAsStream {
     public static void main(final String[] args) throws IOException 
     {
         //Creating instance to avoid static member methods
-        ReadFileFromClasspath instance = new ReadFileFromClasspath();
+        ReadFileFromResourcesUsingGetResourceAsStream instance 
+            = new ReadFileFromResourcesUsingGetResourceAsStream();
 
         InputStream is = instance.getFileAsIOStream("demo.txt");
         instance.printFileContent(is);
