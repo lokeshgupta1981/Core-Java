@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Core-Java</groupId>
-	<artifactId>Core-Java</artifactId> 
+	<artifactId>Core-Java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<dependencies>
@@ -42,6 +42,16 @@
 			<artifactId>activation</artifactId>
 			<version>1.0.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-core</artifactId>
+			<version>1.19</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-generator-annprocess</artifactId>
+			<version>1.19</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -56,11 +66,42 @@
 
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
 				<configuration>
-					<release>16</release>
+					<source>16</source>
+					<target>16</target>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.openjdk.jmh</groupId>
+							<artifactId>jmh-generator-annprocess</artifactId>
+							<version>1.19</version>
+						</path>
+					</annotationProcessorPaths>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>run-benchmarks</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<classpathScope>test</classpathScope>
+							<executable>java</executable>
+							<arguments>
+								<argument>-classpath</argument>
+								<classpath />
+								<argument>org.openjdk.jmh.Main</argument>
+								<argument>.*</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -75,36 +116,14 @@
 					</archive>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.4.3</version>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<overwrite>true</overwrite>
-							<outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${project.basedir}/src/main/resources</directory>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId> 
+				<version>3.2.0</version> <configuration> <failOnMissingWebXml>false</failOnMissingWebXml> 
+				</configuration> </plugin> <plugin> <artifactId>maven-resources-plugin</artifactId> 
+				<version>2.4.3</version> <executions> <execution> <id>copy-resources</id> 
+				<phase>process-resources</phase> <goals> <goal>copy-resources</goal> </goals> 
+				<configuration> <overwrite>true</overwrite> <outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/</outputDirectory> 
+				<resources> <resource> <directory>${project.basedir}/src/main/resources</directory> 
+				</resource> </resources> </configuration> </execution> </executions> </plugin> -->
 		</plugins>
 	</build>
 </project>
