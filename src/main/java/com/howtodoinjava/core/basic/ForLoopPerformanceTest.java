@@ -21,7 +21,7 @@ public class ForLoopPerformanceTest
         for(int i=0; i < 1_000_000; i++)
         {
             list.add(i);
-        }
+        }L̥
     }
     
     @Benchmark
