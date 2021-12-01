@@ -8,7 +8,9 @@ package com.lambdaworks.jni;
  * @author Will Glozer
  */
 public class UnsupportedPlatformException extends RuntimeException {
-    public UnsupportedPlatformException(String s) {
+	private static final long serialVersionUID = 1L;
+
+	public UnsupportedPlatformException(String s) {
         super(s);
     }
 }
