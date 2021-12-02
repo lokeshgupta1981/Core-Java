@@ -9,7 +9,12 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+//For my testing only
+
+
+@SuppressWarnings("unused")
 public class Main {
+
     public static void main(final String[] args) throws JAXBException {
         JAXBContext context = getJAXBContext(Book.class);
         JAXBContext context2 = getJAXBContext(Book.class);
@@ -19,13 +24,13 @@ public class Main {
         JAXBContext context6 = getJAXBContext(Book.class);
         JAXBContext context7 = getJAXBContext(Book.class);
         JAXBContext context8 = getJAXBContext(Book.class);
-        
     }
 
+    @SuppressWarnings("rawtypes")
     private static Map<Class, JAXBContext> contextCache = new HashMap<>();
 
-    public static JAXBContext getJAXBContext(final Class type)
-        throws JAXBException {
+    @SuppressWarnings("rawtypes")
+    public static JAXBContext getJAXBContext(final Class type) throws JAXBException {
         System.out.println("Classname " + type.getName());
         if (contextCache.containsKey(type)) {
             return contextCache.get(type);
@@ -35,29 +40,46 @@ public class Main {
             return context;
         }
     }
-
-    public static JAXBContext getJaxbContext() throws JAXBException {
-        JAXBContext c1 = getJAXBContext(Book.class);
-        JAXBContext c2 = getJAXBContext(Car.class);
-        JAXBContext c3 = getJAXBContext(House.class);
-        return c1;
-    }
 }
 
 @XmlRootElement(name = "XML_MESSAGE")
 @XmlAccessorType(XmlAccessType.FIELD)
 class Book {
-    public String bookId;
+    private String bookId;
+
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
 }
 
 @XmlRootElement(name = "XML_MESSAGE")
 @XmlAccessorType(XmlAccessType.FIELD)
 class Car {
-    public String carId;
+    private String carId;
+
+    public String getCarId() {
+        return carId;
+    }
+
+    public void setCarId(String carId) {
+        this.carId = carId;
+    }
 }
 
 @XmlRootElement(name = "XML_MESSAGE")
 @XmlAccessorType(XmlAccessType.FIELD)
 class House {
-    public String houseId;
+    private String houseId;
+
+    public String getHouseId() {
+        return houseId;
+    }
+
+    public void setHouseId(String houseId) {
+        this.houseId = houseId;
+    }
 }
