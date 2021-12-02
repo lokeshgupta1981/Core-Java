@@ -1,36 +1,45 @@
-package com.howtodoinjava.io; 
+package com.howtodoinjava.io;
 
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.util.List;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
-public class ReadFileFromClasspath 
-{
-    public static void main(final String[] args) throws Exception 
+public class ReadFileFromClasspath {
+    public static void main(final String[] args) throws IOException 
     {
-        // To avoid referring non-static method inside main() static method
+        //Creating instance to avoid static member methods
         ReadFileFromClasspath instance = new ReadFileFromClasspath();
 
-        File file = instance.getFile("classpath:data/demoData.txt");
-
-        // validate file path
-        System.out.println(file.getPath());
-
-        // Read file
-        List<String> lines = Files.readAllLines(file.toPath());
-
-        System.out.println(lines);
+        InputStream is = instance.getFileAsIOStream("demo.txt");
+        instance.printFileContent(is);
+        
+        is = instance.getFileAsIOStream("data/demo.txt");
+        instance.printFileContent(is);
     }
 
-    private File getFile(final String fileName) throws IOException 
+    private InputStream getFileAsIOStream(final String fileName) 
     {
-        URL resource = this.getClass().getResource(fileName);
-        if (resource == null) {
-            throw new IllegalArgumentException("file is not found!");
-        } else {
-            return new File(resource.getFile());
+        InputStream ioStream = this.getClass()
+            .getClassLoader()
+            .getResourceAsStream(fileName);
+        
+        if (ioStream == null) {
+            throw new IllegalArgumentException(fileName + " is not found");
+        }
+        return ioStream;
+    }
+
+    private void printFileContent(InputStream is) throws IOException 
+    {
+        try (InputStreamReader isr = new InputStreamReader(is); 
+                BufferedReader br = new BufferedReader(isr);) 
+        {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+            is.close();
         }
     }
 }
