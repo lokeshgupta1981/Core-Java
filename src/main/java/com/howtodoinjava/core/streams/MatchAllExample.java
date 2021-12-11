@@ -21,10 +21,10 @@ public class MatchAllExample
     private static Stream<Employee> getEmployeeStream()
     {
         List<Employee> empList = new ArrayList<>();
-        empList.add(new Employee(1, "A", LocalDate.of(1991, 1, 1), 30000));
-        empList.add(new Employee(2, "B", LocalDate.of(1976, 7, 9), 30000));
-        empList.add(new Employee(3, "C", LocalDate.of(1992, 8, 1), 50000));
-        empList.add(new Employee(4, "D", LocalDate.of(2001, 3, 11), 50000));
+        empList.add(new Employee(1, "A", LocalDate.of(1991, 1, 1), 30000d));
+        empList.add(new Employee(2, "B", LocalDate.of(1976, 7, 9), 30000d));
+        empList.add(new Employee(3, "C", LocalDate.of(1992, 8, 1), 50000d));
+        empList.add(new Employee(4, "D", LocalDate.of(2001, 3, 11), 50000d));
          
         return empList.stream();
     }
