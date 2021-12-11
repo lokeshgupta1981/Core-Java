@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 import com.howtodoinjava.core.streams.Employee;
 
-public class DateOfBirhComparator implements Comparator<Employee> {
+public class DateOfBirthComparator implements Comparator<Employee> {
 
     @Override
     public int compare(final Employee e1, final Employee e2) {
