@@ -38,7 +38,7 @@ public class SortWithNullValues
         // 3. Custom Object can be Null
         List<Employee> sortedEmployeeList = getEmployeeListWithNullObjects()
             .stream()
-            .sorted(Comparator.nullsFirst(new DateOfBirhComparator()))
+            .sorted(Comparator.nullsFirst(new DateOfBirthComparator()))
             .collect(Collectors.toList());
         
         System.out.println(sortedEmployeeList);
@@ -47,7 +47,7 @@ public class SortWithNullValues
 
         // 4. Custom Object's field can be Null
         sortedEmployeeList = getEmployeeListWithNullDates().stream()
-            .sorted(Comparator.nullsFirst(new DateOfBirhComparator()))
+            .sorted(Comparator.nullsFirst(new DateOfBirthComparator()))
             .collect(Collectors.toList());
 
         System.out.println(sortedEmployeeList);
