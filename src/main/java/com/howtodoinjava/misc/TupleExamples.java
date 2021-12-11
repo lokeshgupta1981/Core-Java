@@ -8,6 +8,7 @@ import org.javatuples.Quartet;
 import org.javatuples.Triplet;
 
 public class TupleExamples {
+    @SuppressWarnings("unused")
     public static void main(final String[] args) {
 
         Pair<String, Integer> pair = Pair.with("Sajal", 12);
