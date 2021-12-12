@@ -2,14 +2,14 @@ package com.howtodoinjava.core.streams;
 
 import java.time.LocalDate;
 
-class Employee {
+public class Employee {
     private long id;
     private String name;
     private LocalDate dateOfBirth;
     private double salary;
 
     public Employee(final long id, final String name,
-        final LocalDate dateOfBirth, final double salary) {
+        final LocalDate dateOfBirth, final Double salary) {
         super();
         this.id = id;
         this.name = name;
