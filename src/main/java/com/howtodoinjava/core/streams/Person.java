@@ -14,7 +14,7 @@ public class Person implements Comparable<Person> {
     private String lname;
 
     @Override
-    public int compareTo(Person p) {
+    public int compareTo(final Person p) {
         return this.getId().compareTo(p.getId());
     }
 }
