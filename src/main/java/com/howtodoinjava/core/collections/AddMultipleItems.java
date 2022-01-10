@@ -17,6 +17,10 @@ public class AddMultipleItems
     
     //List 1
     List<String> namesList = Arrays.asList( "a", "b", "c");
+    
+    ArrayList<String> instance = new ArrayList<>(namesList);
+    
+    System.out.println(instance);
 
     //List 2
     ArrayList<String> otherList = new ArrayList<>(Arrays.asList( "d", "e"));
