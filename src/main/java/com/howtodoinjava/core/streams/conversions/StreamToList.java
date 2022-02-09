@@ -1,7 +1,5 @@
 package com.howtodoinjava.core.streams.conversions;
 
-import com.howtodoinjava.core.streams.Employee;
-
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,8 +7,11 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import com.howtodoinjava.core.streams.Employee;
+
+@SuppressWarnings("unused")
 public class StreamToList {
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     Stream<String> tokenStream = Stream.of("A", "B", "C", "D");  //Stream
 
     List<String> tokenList1 = tokenStream.toList();
