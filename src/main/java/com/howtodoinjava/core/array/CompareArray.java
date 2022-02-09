@@ -3,10 +3,9 @@ package com.howtodoinjava.core.array;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-@SuppressWarnings("unused")
 public class CompareArray {
-  public static boolean checkEqualityWithStream(String[] a1,
-                                                String[] a2) {
+  public static boolean checkEqualityWithStream(final String[] a1,
+                                                final String[] a2) {
     if (a1 == a2) {
       return true;
     }
@@ -20,8 +19,8 @@ public class CompareArray {
         .allMatch(i -> a1[i].equals(a2[i]));
   }
 
-  public static boolean checkArrayEqualityWithForLoop(String[] a1,
-                                                      String[] a2) {
+  public static boolean checkArrayEqualityWithForLoop(final String[] a1,
+                                                      final String[] a2) {
     if (a1 == a2) {
       return true;
     }
@@ -44,7 +43,7 @@ public class CompareArray {
   }
 
 
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     String[] a1 = {"A", "B", "C"};
     String[] a2 = {"A", "B", "C"};
     String[] a3 = {"A", "B", "D"};

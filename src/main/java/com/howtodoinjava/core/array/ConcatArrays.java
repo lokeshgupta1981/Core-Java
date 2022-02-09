@@ -1,9 +1,5 @@
 package com.howtodoinjava.core.array;
 
-import com.google.common.collect.ObjectArrays;
-import com.google.common.primitives.Ints;
-import org.apache.commons.lang3.ArrayUtils;
-
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,8 +8,14 @@ import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import org.apache.commons.lang3.ArrayUtils;
+
+import com.google.common.collect.ObjectArrays;
+import com.google.common.primitives.Ints;
+
+@SuppressWarnings("unused")
 public class ConcatArrays {
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     String[] strArray1 = {"1", "2", "3"};
     String[] strArray2 = {"4", "5", "6"};
 
@@ -59,12 +61,14 @@ public class ConcatArrays {
 
   }
 
-  static <T> T[] concatWithStream(T[] array1, T[] array2) {
+  @SuppressWarnings("unchecked")
+  static <T> T[] concatWithStream(final T[] array1, final T[] array2) {
     return Stream.concat(Arrays.stream(array1), Arrays.stream(array2))
         .toArray(size -> (T[]) Array.newInstance(array1.getClass().getComponentType(), size));
   }
 
-  static <T> T[] concatWithCollection(T[] array1, T[] array2) {
+  @SuppressWarnings("unchecked")
+  static <T> T[] concatWithCollection(final T[] array1, final T[] array2) {
     List<T> resultList = new ArrayList<>(array1.length + array2.length);
     Collections.addAll(resultList, array1);
     Collections.addAll(resultList, array2);
@@ -72,7 +76,7 @@ public class ConcatArrays {
     return resultList.toArray(resultArray);
   }
 
-  static <T> T[] concatWithArrayCopy(T[] array1, T[] array2) {
+  static <T> T[] concatWithArrayCopy(final T[] array1, final T[] array2) {
     T[] result = Arrays.copyOf(array1, array1.length + array2.length);
     System.arraycopy(array2, 0, result, array1.length, array2.length);
     return result;
