@@ -1,11 +1,12 @@
 package com.howtodoinjava.core.array;
 
+import com.google.common.collect.MinMaxPriorityQueue;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.stream.Collectors;
-import com.google.common.collect.MinMaxPriorityQueue;
 
 public class TopNItems {
     public static void main(String[] args) {
@@ -14,9 +15,9 @@ public class TopNItems {
         // 1
         // @formatter:off
         List<Integer> top3ItemsInList = Arrays.stream(items)
-                        .sorted(Collections.reverseOrder())
-                        .limit(3)
-                        .collect(Collectors.toList());
+                .sorted(Collections.reverseOrder())
+                .limit(3)
+                .collect(Collectors.toList());
         System.out.println("Items are : " + top3ItemsInList);
         // @formatter:on
 
@@ -38,8 +39,8 @@ public class TopNItems {
         // @formatter:off
         MinMaxPriorityQueue<Integer> minMaxQueue =
                 MinMaxPriorityQueue.orderedBy(Collections.reverseOrder())
-                    .maximumSize(3)
-                    .create();
+                        .maximumSize(3)
+                        .create();
         for (Integer i : items) {
             minMaxQueue.add(i);
         }
