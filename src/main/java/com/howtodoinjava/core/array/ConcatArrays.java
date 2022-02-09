@@ -20,13 +20,19 @@ public class ConcatArrays {
     int[] intArray1 = {1, 2, 3};
     int[] intArray2 = {4, 5, 6};
 
+    String[] resultObj;
+    int[] result;
+
     //Apache Commons Lang
-    String[] resultObj = ArrayUtils.addAll(strArray1, strArray2);
-    int[] result = ArrayUtils.addAll(intArray1, intArray2);
+    ArrayUtils.addAll(strArray1, strArray2);
+    result = ArrayUtils.addAll(intArray1, intArray2);
+    System.out.println(Arrays.toString(result));
 
     //Guava
     resultObj = ObjectArrays.concat(strArray1, strArray2, String.class);
     result = Ints.concat(intArray1, intArray2);
+    System.out.println(resultObj);
+    System.out.println(result);
 
     //1
     result = new int[intArray1.length + intArray2.length];
@@ -48,11 +54,13 @@ public class ConcatArrays {
     System.arraycopy(intArray2, 0, result, intArray1.length, intArray2.length);
 
     //3
-    IntStream.concat(Arrays.stream(intArray1), Arrays.stream(intArray2)).toArray();
+    result = IntStream.concat(Arrays.stream(intArray1),
+        Arrays.stream(intArray2)).toArray();
 
     String[] both = Stream.concat(Arrays.stream(strArray1),
             Arrays.stream(strArray2))
         .toArray(String[]::new);
+    System.out.println(both);
 
     resultObj = concatWithArrayCopy(strArray1, strArray2);
     System.out.println(Arrays.toString(resultObj));
