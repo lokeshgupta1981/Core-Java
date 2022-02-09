@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import com.howtodoinjava.core.streams.Person;
 
@@ -23,14 +22,12 @@ public class UserTypeStream {
 
         personStream = getPersonStream();
 
-        List<Person> sortedList = personStream.sorted(new FirstNameSorter())
-                .collect(Collectors.toList());
+        List<Person> sortedList = personStream.sorted(new FirstNameSorter()).toList();
 
         sortedList.forEach(System.out::println);
 
         List<Person> reverseSortedList =
-                personStream.sorted(new FirstNameSorter().reversed())
-                        .collect(Collectors.toList());
+                personStream.sorted(new FirstNameSorter().reversed()).toList();
 
         reverseSortedList.forEach(System.out::println);
 
