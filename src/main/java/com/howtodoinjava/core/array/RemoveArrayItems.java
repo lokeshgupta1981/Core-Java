@@ -9,22 +9,21 @@ import java.util.List;
 public class RemoveArrayItems {
   public static void main(String[] args) {
     Integer[] originalArray = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    Integer[] reducedArray;
 
     //1. Apache Commons's ArrayUtils.remove()
-    reducedArray = ArrayUtils.remove(originalArray, 5);
+    Integer[] reducedArray = ArrayUtils.removeAll(originalArray, 5, 6, 7);
     System.out.println("Reduced Array Length : " + reducedArray.length);
     System.out.println("Reduced Array : " + Arrays.toString(reducedArray));
 
     //2. Using List
     List<Integer> tempList = new ArrayList<>(Arrays.asList(originalArray));
-    tempList.remove(5);
+    tempList.remove(7);
     reducedArray = tempList.toArray(new Integer[0]);
     System.out.println("Reduced Array Length : " + reducedArray.length);
     System.out.println("Reduced Array : " + Arrays.toString(reducedArray));
 
     //3. Removing element by value
-    reducedArray = ArrayUtils.removeElement(originalArray, 0);
+    reducedArray = ArrayUtils.removeAllOccurrences(originalArray, 4);
     System.out.println("Reduced Array Length : " + reducedArray.length);
     System.out.println("Reduced Array : " + Arrays.toString(reducedArray));
 
@@ -39,10 +38,10 @@ public class RemoveArrayItems {
   }
 
   static <T> void removeIndexAndShift(T[] array, int indexToRemove) {
-    for(int i = indexToRemove; i < array.length -1; i++){
-      array[i] = array[i +1];
+    for (int i = indexToRemove; i < array.length - 1; i++) {
+      array[i] = array[i + 1];
     }
     //optionally we can set the last element to null
-    array[array.length-1] = null;
+    array[array.length - 1] = null;
   }
 }
