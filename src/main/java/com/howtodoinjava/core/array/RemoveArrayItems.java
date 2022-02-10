@@ -27,5 +27,22 @@ public class RemoveArrayItems {
     reducedArray = ArrayUtils.removeElement(originalArray, 0);
     System.out.println("Reduced Array Length : " + reducedArray.length);
     System.out.println("Reduced Array : " + Arrays.toString(reducedArray));
+
+    //4. Removing using for-loop and shifting the remaining items
+    removeIndexAndShift(originalArray, 6);
+    System.out.println("Reduced Array Length : " + originalArray.length);
+    System.out.println("Reduced Array : " + Arrays.toString(originalArray));
+
+    removeIndexAndShift(originalArray, 2);
+    System.out.println("Reduced Array Length : " + originalArray.length);
+    System.out.println("Reduced Array : " + Arrays.toString(originalArray));
+  }
+
+  static <T> void removeIndexAndShift(T[] array, int indexToRemove) {
+    for(int i = indexToRemove; i < array.length -1; i++){
+      array[i] = array[i +1];
+    }
+    //optionally we can set the last element to null
+    array[array.length-1] = null;
   }
 }
