@@ -6,8 +6,7 @@ import java.util.stream.Stream;
 
 
 public class ConvertBetweenArrayAndStream {
-  @SuppressWarnings({"UnusedAssignment"})
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     int[] primitiveArray = {0,1,2,3,4};
     String[] stringArray = {"a", "b", "c", "d", "e"};
 
