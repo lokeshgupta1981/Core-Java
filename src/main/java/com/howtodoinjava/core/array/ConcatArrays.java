@@ -13,7 +13,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import com.google.common.collect.ObjectArrays;
 import com.google.common.primitives.Ints;
 
-@SuppressWarnings("unused")
 public class ConcatArrays {
   public static void main(final String[] args) {
     String[] strArray1 = {"1", "2", "3"};

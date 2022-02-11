@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("unused")
 public class JoinArrayItems {
   public static void main(final String[] args) {
     int[] intArray = {};
@@ -24,6 +25,7 @@ public class JoinArrayItems {
 
     List<String> tokens = Arrays.asList("How", "To", "Do", "In", "Java");
 
+    
     joinedString = tokens.stream()
       .collect(Collectors.joining(", ", "[", "]"));
 
