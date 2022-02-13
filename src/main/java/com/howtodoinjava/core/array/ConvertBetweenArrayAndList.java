@@ -7,21 +7,21 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ConvertBetweenArrayAndList {
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     List<String> list = Arrays.asList("A", "B", "C");
 
     //List -> Array
-    String[] stringArray = new String[]{"A", "B", "C"};
+    String[] stringArray = {"A", "B", "C"};
 
     //1. List.toArray()
     Object[] objArray = list.toArray();
-    //System.out.println(Arrays.toString(objArray));
+    System.out.println(Arrays.toString(objArray));
 
     //2. Stream.toArray()
     stringArray = list.stream()
-        .filter(s -> s.equals("A"))
+        .filter(s -> "A".equals(s))
         .toArray(String[]::new);
-    //System.out.println(Arrays.toString(stringArray));
+    System.out.println(Arrays.toString(stringArray));
 
     //Array -> List
 
