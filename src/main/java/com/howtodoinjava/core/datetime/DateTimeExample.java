@@ -3,7 +3,9 @@ package com.howtodoinjava.core.datetime;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class DateTimeExample {
   public static void main(String[] args) {
@@ -33,5 +35,10 @@ public class DateTimeExample {
     String formattedDate = myDateObj.format(myFormatObj);
     System.out.println(formattedDate);
 
+    LocalDate localDate = LocalDate.now();
+
+    Date date = Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+
+    System.out.println(date);
   }
 }
