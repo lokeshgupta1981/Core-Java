@@ -1,7 +1,6 @@
 package com.howtodoinjava.core.datetime;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -12,7 +11,7 @@ import java.util.TimeZone;
 public class EstTimezone {
 
 
-  public static void main(String[] args)
+  public static void main(final String[] args)
   {
 
     //1
