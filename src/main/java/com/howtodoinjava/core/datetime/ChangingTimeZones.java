@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class ChangingTimeZones {
-  public static void main(String[] args) throws ParseException {
+  public static void main(final String[] args) throws ParseException {
 
     //1
     ZonedDateTime instant = ZonedDateTime.now();
@@ -27,6 +27,7 @@ public class ChangingTimeZones {
     OffsetDateTime nowInUTC = now.withOffsetSameInstant(ZoneOffset.of( "-00" +
         ":00" ));
     System.out.println(instantInUTC);
+    System.out.println(nowInUTC);
 
 
     //3

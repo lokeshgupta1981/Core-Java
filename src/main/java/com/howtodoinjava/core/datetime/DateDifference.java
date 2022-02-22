@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class DateDifference {
+  @SuppressWarnings("deprecation")
   public static void main(final String[] args) {
     // First Date
     Date today = new Date();
@@ -29,6 +30,6 @@ public class DateDifference {
     final TimeUnit timeUnit) {
     long diffInMillies = date2.getTime() - date1.getTime();
 
-    return timeUnit.convert(diffInMillies, timeUnit.MILLISECONDS);
+    return timeUnit.convert(diffInMillies, TimeUnit.MILLISECONDS);
   }
 }
