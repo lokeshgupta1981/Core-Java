@@ -22,12 +22,14 @@ public class StartEndOfDay {
     // 2
     ZonedDateTime startOfDayInEurope = localDate
       .atStartOfDay(ZoneId.of("Europe/Paris"));
+    ZonedDateTime endOfDayInZone = localDate.atTime(LocalTime.MIN)
+        .atZone(ZoneId.systemDefault());
     ZonedDateTime endOfDayInEurope = localDate.atTime(LocalTime.MAX)
       .atZone(ZoneId.of("Europe/Paris"));
     
     ZonedDateTime startOfDayInZone = localDate
       .atStartOfDay(ZoneId.systemDefault());
-    ZonedDateTime endOfDayInZone = localDate.atTime(LocalTime.MAX)
+    ZonedDateTime endOfDayInZone1 = localDate.atTime(LocalTime.MAX)
       .atZone(ZoneId.systemDefault());
 
     System.out.println(startOfDay);
