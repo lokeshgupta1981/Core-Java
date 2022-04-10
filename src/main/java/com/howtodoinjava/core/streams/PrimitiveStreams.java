@@ -8,6 +8,7 @@ import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
 public class PrimitiveStreams {
+  @SuppressWarnings("unused")
   public static void main(final String[] args) {
     // 1 from array of primitives
     int[] integers = { 1, 2, 3, 4, 5, 6 };

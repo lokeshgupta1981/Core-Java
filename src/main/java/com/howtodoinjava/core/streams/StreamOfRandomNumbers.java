@@ -9,7 +9,8 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 public class StreamOfRandomNumbers {
-  public static void main(String[] args) throws NoSuchAlgorithmException {
+  @SuppressWarnings("unused")
+  public static void main(final String[] args) throws NoSuchAlgorithmException {
     Random random = new Random();
 
     //1

@@ -1,11 +1,16 @@
 package com.howtodoinjava.core.streams;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 import java.util.stream.Stream;
 
 public class CreateStreams {
-  public static void main(String[] args) {
+  @SuppressWarnings("unused")
+  public static void main(final String[] args) {
     List<String> list = Arrays.asList("A", "B", "C", "D");
     Stream<String> s = list.stream();
 
