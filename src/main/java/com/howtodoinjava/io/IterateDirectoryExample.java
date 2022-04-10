@@ -78,6 +78,7 @@ public class IterateDirectoryExample {
     pathList.forEach(System.out::println);
   }
 
+  @SuppressWarnings("unchecked")
   private static List<File> listFiles(final String directory) {
     if (directory == null) {
       return Collections.EMPTY_LIST;

@@ -7,7 +7,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamOfDates {
-  public static void main(String[] args) {
+  @SuppressWarnings("unused")
+  public static void main(final String[] args) {
 
     //Java 9
     LocalDate today = LocalDate.now();

@@ -1,8 +1,5 @@
 package com.howtodoinjava.core.datetime;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -10,8 +7,11 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Locale;
 import java.util.TimeZone;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 public class XmlGregorianCalendarExamples {
   private final static String TIMESTAMP_PATTERN
@@ -19,7 +19,8 @@ public class XmlGregorianCalendarExamples {
   private final static DateTimeFormatter FORMATTER
       = DateTimeFormatter.ofPattern(TIMESTAMP_PATTERN);
 
-  public static void main(String[] args) throws DatatypeConfigurationException {
+  @SuppressWarnings("unused")
+  public static void main(final String[] args) throws DatatypeConfigurationException {
     //Create XMLGregorianCalendar
     GregorianCalendar cal = new GregorianCalendar();
     cal.setTime(new Date());

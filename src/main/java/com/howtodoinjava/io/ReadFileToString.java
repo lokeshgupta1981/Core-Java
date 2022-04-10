@@ -12,6 +12,7 @@ import org.apache.commons.io.FileUtils;
 import com.google.common.base.Charsets;
 
 public class ReadFileToString {
+  @SuppressWarnings("resource")
   public static void main(final String[] args) throws IOException {
 
     String ls = System.lineSeparator();
