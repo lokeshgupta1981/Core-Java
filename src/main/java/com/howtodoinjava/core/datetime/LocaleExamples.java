@@ -2,13 +2,11 @@ package com.howtodoinjava.core.datetime;
 
 import java.text.DateFormat;
 import java.text.NumberFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Locale;
-import java.util.ResourceBundle;
 
 public class LocaleExamples {
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
 
     //1 Get Locale Basic Info
     Locale enUsLocale = new Locale("EN", "US");
