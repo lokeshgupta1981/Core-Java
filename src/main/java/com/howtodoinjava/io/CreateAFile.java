@@ -1,13 +1,15 @@
 package com.howtodoinjava.io;
 
-import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.nio.file.attribute.FileAttribute;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
@@ -17,6 +19,10 @@ public class CreateAFile {
   @SuppressWarnings("unused")
   public static void main(final String[] args) throws IOException {
     // 1 - NIO Files.createFile()
+    Set<PosixFilePermission> permissions = PosixFilePermissions
+      .fromString("r--r--r--");
+    FileAttribute<Set<PosixFilePermission>> fileAttributes = PosixFilePermissions
+      .asFileAttribute(permissions);
     Path textFilePath = Paths.get(TEXT_FILE);
     Files.createFile(textFilePath); // throws IOException
 
@@ -25,13 +31,7 @@ public class CreateAFile {
     boolean isFileCreated = textFile.createNewFile(); // throws IOException
 
     // 3 - FileOutputStream
-    try (OutputStream out = new BufferedOutputStream(
-            Files.newOutputStream(
-               textFilePath, 
-               StandardOpenOption.CREATE, 
-               StandardOpenOption.APPEND))) {
-      // We can write data as byte[]
-      //out.write(data, 0, data.length);
+    try(FileOutputStream fileOutputStream = new FileOutputStream(TEXT_FILE)){
     }
 
     // 4 - Guava
