@@ -54,6 +54,7 @@ public class DistinctComplexTypes {
   }
 
   // Utility function
+  @SuppressWarnings("unchecked")
   private static <T> Predicate<T> distinctByKeys(final Function<? super T, ?>... keyExtractors) 
   {
     final Map<List<?>, Boolean> seen = new ConcurrentHashMap<>();

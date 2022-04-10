@@ -6,6 +6,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ChainedPredicate {
+  @SuppressWarnings("unused")
   public static void main(final String[] args) {
     List<String> list = Arrays.asList("Aa", "Bb", "Cc", "Dd", "Ab", "Bc");
 

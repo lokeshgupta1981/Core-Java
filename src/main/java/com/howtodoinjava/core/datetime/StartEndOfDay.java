@@ -7,6 +7,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 public class StartEndOfDay {
+  @SuppressWarnings("unused")
   public static void main(final String[] args) {
 
     LocalDate localDate = LocalDate.now();

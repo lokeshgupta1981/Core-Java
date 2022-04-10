@@ -31,7 +31,9 @@ public class CreateAFile {
     boolean isFileCreated = textFile.createNewFile(); // throws IOException
 
     // 3 - FileOutputStream
-    try(FileOutputStream fileOutputStream = new FileOutputStream(TEXT_FILE)){
+    try(FileOutputStream fos = new FileOutputStream(TEXT_FILE)){
+      // We can write data as byte[]
+      // out.write(data, 0, data.length);
     }
 
     // 4 - Guava
