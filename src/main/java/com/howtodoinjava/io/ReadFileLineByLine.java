@@ -18,6 +18,7 @@ import org.apache.commons.io.FileUtils;
 import com.google.common.io.LineProcessor;
 
 public class ReadFileLineByLine {
+  @SuppressWarnings("unused")
   public static void main(final String[] args) {
     Path filePath = Paths.get("c:/temp", "data.txt");
 
