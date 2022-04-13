@@ -26,5 +26,8 @@ public class FileSize {
     
     String displaySize = FileUtils.byteCountToDisplaySize(bytes);
     System.out.println(displaySize);
+
+    System.out.println(FileUtils.byteCountToDisplaySize(2333444l));  //2 MB
+    System.out.println(FileUtils.byteCountToDisplaySize(2333444555l));  //2 GB
   }
 }
