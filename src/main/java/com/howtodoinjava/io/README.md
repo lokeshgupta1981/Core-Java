@@ -5,7 +5,7 @@
 
 *   [Creating a New File](https://howtodoinjava.com/java/io/how-to-create-a-new-file-in-java/)
 *   [Reading a File to String](https://howtodoinjava.com/java/io/java-read-file-to-string-examples/)
-*   [Reading a File to Byte\[\]](https://howtodoinjava.com/java/io/read-file-content-into-byte-array/)
+*   [Reading a File to Byte](https://howtodoinjava.com/java/io/read-file-content-into-byte-array/)
 *   [Reading a File Line by Line](https://howtodoinjava.com/java8/read-file-line-by-line/)
 *   [Reading a File from Classpath](https://howtodoinjava.com/java/io/read-file-from-classpath/)
 *   [Reading a File from Resources Directory](https://howtodoinjava.com/java/io/read-file-from-resources-folder/)
