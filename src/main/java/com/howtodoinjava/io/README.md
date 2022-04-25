@@ -45,7 +45,7 @@
 *   [Copying a Directory](https://howtodoinjava.com/java/io/how-to-copy-directories-in-java/)
 *   [Delete a Directory Recursively](https://howtodoinjava.com/java/io/delete-directory-recursively/)
 *   [Filtering Files with FileFilter](https://howtodoinjava.com/java/io/java-filefilter-example/)
-*   [Finding Files Matching Pattern with FilenameFilter](http://Finding Files Matching Pattern with FilenameFilter)
+*   [Finding Files Matching Pattern with FilenameFilter](https://howtodoinjava.com/java/io/java-filenamefilter-example/)
 
 4\. Conversions
 ---------------
