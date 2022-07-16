@@ -1,0 +1,75 @@
+2022-01-10 20:18:41.256 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:14)] - warning message
+2022-01-10 20:18:41.265 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:15)] - info
+2022-01-10 20:18:41.265 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:16)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 20:23:50.143 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:17)] - warning message
+2022-01-10 20:23:50.151 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:18)] - info
+2022-01-10 20:23:50.151 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:19)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 20:24:22.000 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:16)] - warning message
+2022-01-10 20:24:22.012 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:17)] - info
+2022-01-10 20:24:22.012 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:18)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 20:24:45.052 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:16)] - warning message
+2022-01-10 20:24:45.060 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:17)] - info
+2022-01-10 20:24:45.061 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:18)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 20:32:44.625 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:17)] - warning message
+2022-01-10 20:32:44.636 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:20)] - Article found : {} [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 20:32:44.638 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:22)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 20:33:29.115 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:17)] - warning message
+2022-01-10 20:33:29.126 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:20)] - Article found : {} [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 20:33:29.127 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:22)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 20:34:04.920 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:17)] - warning message
+2022-01-10 20:34:04.928 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:20)] - Article found : Article(id=1, title=Test Article, tags=[Data])
+2022-01-10 20:34:04.931 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:22)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 20:34:37.621 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:17)] - Warning message
+2022-01-10 20:34:37.632 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:20)] - Article found : Article(id=1, title=Test Article, tags=[Data])
+2022-01-10 20:34:37.635 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:22)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 21:12:44.363 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:19)] - Warning message
+2022-01-10 21:12:44.374 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:22)] - Article found : Article(id=1, title=Test Article, tags=[Data])
+2022-01-10 21:12:44.379 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:24)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 21:12:44.381 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:26)] - Message
+java.lang.NullPointerException: null
+	at com.howtodoinjava.demo.flogger.Main.main(Main.java:26) [classes/:?]
+2022-01-10 21:12:44.397 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 0
+2022-01-10 21:12:44.398 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 10
+2022-01-10 21:12:44.398 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 20
+2022-01-10 21:12:44.399 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 30
+2022-01-10 21:12:44.400 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 40
+2022-01-10 21:12:57.460 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:19)] - Warning message
+2022-01-10 21:12:57.469 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:22)] - Article found : Article(id=1, title=Test Article, tags=[Data])
+2022-01-10 21:12:57.473 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:24)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 21:12:57.474 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:26)] - Message
+java.lang.NullPointerException: null
+	at com.howtodoinjava.demo.flogger.Main.main(Main.java:26) [classes/:?]
+2022-01-10 21:12:57.485 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 0
+2022-01-10 21:12:57.486 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 10
+2022-01-10 21:12:57.486 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 20
+2022-01-10 21:12:57.487 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 30
+2022-01-10 21:12:57.488 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - This log shows every 10 iterations => 40
+2022-01-10 21:13:23.574 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:19)] - Warning message
+2022-01-10 21:13:23.583 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:22)] - Article found : Article(id=1, title=Test Article, tags=[Data])
+2022-01-10 21:13:23.586 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:24)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 21:13:23.588 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:26)] - Message
+java.lang.NullPointerException: null
+	at com.howtodoinjava.demo.flogger.Main.main(Main.java:26) [classes/:?]
+2022-01-10 21:13:23.599 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 0
+2022-01-10 21:13:23.599 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 10
+2022-01-10 21:13:23.599 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 20
+2022-01-10 21:13:23.601 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 30
+2022-01-10 21:13:23.601 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 40
+2022-01-10 21:14:49.888 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:19)] - Warning message
+2022-01-10 21:14:49.897 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:22)] - Article found : Article(id=1, title=Test Article, tags=[Data])
+2022-01-10 21:14:49.900 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:24)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 21:14:49.902 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:26)] - NullPointerException Received
+java.lang.NullPointerException: null
+	at com.howtodoinjava.demo.flogger.Main.main(Main.java:26) [classes/:?]
+2022-01-10 21:14:49.913 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 0
+2022-01-10 21:14:49.915 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 10
+2022-01-10 21:14:49.915 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 20
+2022-01-10 21:14:49.916 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 30
+2022-01-10 21:14:49.917 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:30)] - The counter is => 40
+2022-01-10 21:16:44.926 WARN [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:19)] - Warning message
+2022-01-10 21:16:44.934 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:22)] - Article found : Article(id=1, title=Test Article, tags=[Data])
+2022-01-10 21:16:44.938 ERROR [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:24)] - SEVERE [ERROR: UNUSED LOG ARGUMENTS]
+2022-01-10 21:16:44.939 INFO [main] [com.howtodoinjava.demo.flogger.Main.main(Main.java:29)] - NullPointerException Received
+java.lang.NullPointerException: null
+	at com.howtodoinjava.demo.flogger.Main.main(Main.java:28) [classes/:?]
+2022-01-10 21:16:44.951 INFO [main] [com.howtodoinjava.demo.flogger.Main.lambda$1(Main.java:33)] - The counter is => 0

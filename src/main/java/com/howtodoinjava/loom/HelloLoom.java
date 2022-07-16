@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class HelloLoom {
-  public static void main(String[] args) throws InterruptedException {
+  /*public static void main(String[] args) throws InterruptedException {
 
     final AtomicInteger atomicInteger = new AtomicInteger();
 
@@ -35,5 +35,5 @@ public class HelloLoom {
     Instant finish = Instant.now();
     long timeElapsed = Duration.between(start, finish).toMillis();  //in millis
     System.out.println("Total elapsed time : " + timeElapsed);
-  }
+  }*/
 }
