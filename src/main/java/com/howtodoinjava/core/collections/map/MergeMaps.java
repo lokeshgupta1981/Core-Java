@@ -32,9 +32,12 @@ public class MergeMaps {
         thirdMap.put(3, "C");
         thirdMap.put(4, "D");
 
-        secondMap.forEach(
+        /*secondMap.forEach(
                 (key, value) -> thirdMap.merge(key, value, (v1, v2) -> v1.equalsIgnoreCase(v2) ? v1 : v1 + "," + v2)
-        );
+        );*/
+
+        secondMap.forEach(
+                (key, value) -> thirdMap.merge(key, value, String::concat));
         System.out.println(thirdMap);
     }
 }
