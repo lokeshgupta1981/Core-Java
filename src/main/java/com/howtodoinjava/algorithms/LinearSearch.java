@@ -1,8 +1,10 @@
+package com.howtodoinjava.algorithms;
+
 class LinearSearch {
-    public static void main( String args[] ) {
+    public static void main(String args[]) {
 
         //given an array of elements
-        int[] arr = { 3, 4, 1, 7, 5 };
+        int[] arr = {3, 4, 1, 7, 5};
 
         //given search element
         int ele = 7;
@@ -15,12 +17,12 @@ class LinearSearch {
     }
 
     //method to check for a element using linear search
-    static String lnrSearch(int arr[], int n, int ele){
-      for (int i = 0; i < n; i++) {
+    static String lnrSearch(int arr[], int n, int ele) {
+        for (int i = 0; i < n; i++) {
             //checks for matching element
             if (arr[i] == ele)
-                return "Given element is found at the index "+ i;
-      }
-      return "Given element is not found in the array.";
+                return "Given element is found at the index " + i;
+        }
+        return "Given element is not found in the array.";
     }
 }
