@@ -1,4 +1,4 @@
-package com.howtodoinjava.core.collections;
+package com.howtodoinjava.core.collections.queue;
 
 import java.time.LocalDate;
 import java.util.PriorityQueue;
