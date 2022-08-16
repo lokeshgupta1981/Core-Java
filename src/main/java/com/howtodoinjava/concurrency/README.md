@@ -7,3 +7,4 @@
 5. [Java Fork/Join Framework Tutorial](https://howtodoinjava.com/java7/forkjoin-framework-tutorial-forkjoinpool-example/)
 6. [Java Thread Pools and ThreadPoolExecutor](https://howtodoinjava.com/java/multi-threading/java-thread-pool-executor-example/)
 7. [Kill a Thread in Java](https://howtodoinjava.com/java/multi-threading/killing-java-threads/)
+8. [Thread Priority](https://howtodoinjava.com/java/multi-threading/java-thread-priority/)
