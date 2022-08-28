@@ -13,11 +13,11 @@ public class DemoTask implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("Executing : " + name);
         try {
-            Thread.sleep(500);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Executing : " + name);
     }
 }
