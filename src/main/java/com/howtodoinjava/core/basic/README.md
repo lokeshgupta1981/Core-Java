@@ -8,4 +8,4 @@
 6. [Java 14 - Pattern Matching for instanceof](https://howtodoinjava.com/java14/pattern-matching-instanceof/)
 7. [Java While Loop](https://howtodoinjava.com/java/basics/while-loop-in-java/)
 8. [Java String substring()](https://howtodoinjava.com/java/string/java-string-substring-example/)
-9.
+9. [Printf-Style Output Formatting in Java](https://howtodoinjava.com/java/basics/printf-style-output-formatting/)

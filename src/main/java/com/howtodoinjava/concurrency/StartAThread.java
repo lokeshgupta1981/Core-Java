@@ -4,13 +4,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class StartAThread {
+
   public static void main(String[] args) {
     Thread subTask = new SubTask();
     subTask.start();
 
     Thread subTaskWithRunnable = new Thread(new SubTaskWithRunnable());
     subTaskWithRunnable.start();
-
 
     Runnable subTaskWithLambda = () ->
     {
@@ -40,12 +40,14 @@ public class StartAThread {
 }
 
 class SubTask extends Thread {
+
   public void run() {
     System.out.println("SubTask started...");
   }
 }
 
 class SubTaskWithRunnable implements Runnable {
+
   public void run() {
     System.out.println("SubTaskWithRunnable started...");
   }
