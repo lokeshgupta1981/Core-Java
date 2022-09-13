@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamCollectToImmutableCollections {
+
   public static void main(String[] args) {
 
     // Java 16
@@ -35,11 +36,13 @@ public class StreamCollectToImmutableCollections {
     //3 - Before Java 10
 
     unmodifiableList = Stream.of(1, 2, 3, 4, 5)
-        .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
+        .collect(Collectors.collectingAndThen(Collectors.toList(),
+            Collections::unmodifiableList));
 
     System.out.println(unmodifiableList);
 
-    var mutableList = Stream.of(1, 2, 3, 4, 5).collect(Collectors.toList());
+    var mutableList = Stream.of(1, 2, 3, 4, 5)
+        .collect(Collectors.toList());
     unmodifiableList = Collections.unmodifiableList(mutableList);
 
     System.out.println(unmodifiableList);
@@ -51,7 +54,8 @@ public class StreamCollectToImmutableCollections {
     System.out.println(unmodifiableList);
 
     unmodifiableList = Stream.of(1, 2, 3, 4, 5)
-        .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
+        .collect(Collectors.collectingAndThen(Collectors.toList(),
+            ImmutableList::copyOf));
 
     System.out.println(unmodifiableList);
   }
