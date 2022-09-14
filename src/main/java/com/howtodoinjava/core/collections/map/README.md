@@ -6,3 +6,4 @@
 * [Java Nested Map](https://howtodoinjava.com/java/collections/java-nested-map/)
 * [Java EnumMap](https://howtodoinjava.com/java/collections/java-enummap/)
 * [Java SubMap](https://howtodoinjava.com/java/collections/java-submap/)
+* [Inverting a Map In Java](https://howtodoinjava.com/java/collections/invert-java-map/)
