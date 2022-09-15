@@ -9,3 +9,4 @@
 7. [Kill a Thread in Java](https://howtodoinjava.com/java/multi-threading/killing-java-threads/)
 8. [Thread Priority](https://howtodoinjava.com/java/multi-threading/java-thread-priority/)
 9. [Start a New Thread](https://howtodoinjava.com/java/multi-threading/create-start-threads/)
+10. [Resolving IllegalMonitorStateException In Java](https://howtodoinjava.com/java/multi-threading/java-illegalmonitorstateexception/)
