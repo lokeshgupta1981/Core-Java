@@ -1,6 +1,9 @@
 package com.howtodoinjava.core.streams;
 
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.TemporalUnit;
 
 public class Employee {
     private long id;
@@ -47,6 +50,10 @@ public class Employee {
 
     public void setDateOfBirth(final LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public int getAge() {
+        return Period.between(LocalDate.now(),dateOfBirth).getYears();
     }
 
     @Override
