@@ -154,6 +154,11 @@
             <artifactId>assertj-core</artifactId>
             <version>3.16.1</version>
         </dependency>
+        <dependency>
+            <groupId>io.soabase.record-builder</groupId>
+            <artifactId>record-builder-core</artifactId>
+            <version>34</version>
+        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
@@ -179,10 +184,15 @@
                             <artifactId>lombok</artifactId>
                             <version>1.18.22</version>
                         </path>
+                        <path>
+                            <groupId>io.soabase.record-builder</groupId>
+                            <artifactId>record-builder-processor</artifactId>
+                            <version>34</version>
+                        </path>
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.0</version>
@@ -203,7 +213,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -211,8 +221,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.howtodoinjava.io.
-                                ReadFileFromResourcesUsingGetResourceAsStream
+                            <mainClass>com.howtodoinjava.io.ReadFileFromResourcesUsingGetResourceAsStream
                             </mainClass>
                         </manifest>
                     </archive>
