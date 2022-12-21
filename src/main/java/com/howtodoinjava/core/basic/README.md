@@ -10,3 +10,4 @@
 8. [Java String substring()](https://howtodoinjava.com/java/string/java-string-substring-example/)
 9. [Printf-Style Output Formatting in Java](https://howtodoinjava.com/java/basics/printf-style-output-formatting/)
 10. [Java – Round Off Double or Float Values to 2 Decimal Places](https://howtodoinjava.com/java/basics/round-off-n-decimal-places/)
+11. [Builder Pattern for Java Records](https://howtodoinjava.com/java/basics/builder-pattern-for-java-records/)
