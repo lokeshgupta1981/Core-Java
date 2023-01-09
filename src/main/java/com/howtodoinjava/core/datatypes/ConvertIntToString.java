@@ -15,6 +15,12 @@ public class ConvertIntToString {
     Assertions.assertEquals("-2147483648", Integer.toString(Integer.MIN_VALUE));
     Assertions.assertEquals("2147483647", Integer.toString(Integer.MIN_VALUE - 1));
 
+
+    Assertions.assertEquals("101000", Integer.toBinaryString(40));
+    Assertions.assertEquals("50", Integer.toOctalString(40));
+    Assertions.assertEquals("28", Integer.toHexString(40));
+
+
     //
 
     Assertions.assertEquals("0", String.valueOf(0));
