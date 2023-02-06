@@ -17,15 +17,17 @@
 
 ## 3\. Converting Date Time Instances
 
-*   [Convert between LocalDateTime and ZonedDateTime](https://howtodoinjava.com/java/date-time/localdatetime-to-zoneddatetime/)
-*   [Convert between LocalDate and ZonedDateTime](https://howtodoinjava.com/java/date-time/localdate-zoneddatetime-conversion/)
-*   [Convert between LocalDateTime and LocalDate](https://howtodoinjava.com/java/date-time/localdate-localdatetime-conversions/)
-*   [Convert between LocalDate to java.sql.Date](https://howtodoinjava.com/java/date-time/localdate-to-sql-date/)
-*   [Convert between LocalTime to java.sql.Time](https://howtodoinjava.com/java/date-time/localtime-to-sql-time/)
-*   [Convert java.util.Date to LocalDate](https://howtodoinjava.com/java/date-time/localdate-to-date/)
-*   [Convert java.util.Date to LocalDateTime](https://howtodoinjava.com/java/date-time/localdatetime-to-date/)
-*   [Converting Date and Time between Timezones](https://howtodoinjava.com/java/date-time/convert-date-between-timezones/)
-*   [Convert a Date to EST/EDT Timezone](https://howtodoinjava.com/java/date-time/convert-date-time-to-est-est5edt/)
+* [Convert between LocalDateTime and ZonedDateTime](https://howtodoinjava.com/java/date-time/localdatetime-to-zoneddatetime/)
+* [Convert between LocalDate and ZonedDateTime](https://howtodoinjava.com/java/date-time/localdate-zoneddatetime-conversion/)
+* [Convert between LocalDateTime and LocalDate](https://howtodoinjava.com/java/date-time/localdate-localdatetime-conversions/)
+* [Convert between LocalDate to java.sql.Date](https://howtodoinjava.com/java/date-time/localdate-to-sql-date/)
+* [Convert between LocalTime to java.sql.Time](https://howtodoinjava.com/java/date-time/localtime-to-sql-time/)
+* [Convert java.util.Date to LocalDate](https://howtodoinjava.com/java/date-time/localdate-to-date/)
+* [Convert java.util.Date to LocalDateTime](https://howtodoinjava.com/java/date-time/localdatetime-to-date/)
+* [Converting Date and Time between Timezones](https://howtodoinjava.com/java/date-time/convert-date-between-timezones/)
+* [Convert a Date to EST/EDT Timezone](https://howtodoinjava.com/java/date-time/convert-date-time-to-est-est5edt/)
+* [Convert Instant to ZonedDateTime in Java](https://howtodoinjava.com/java/date-time/java-instant-to-zoneddatetime/)
+* [Convert Instant to LocalDateTime, LocalDate or LocalTime](https://howtodoinjava.com/java/date-time/convert-instant-to-local-date-time/)
 
 ## 4\. Parsing String to Date
 
