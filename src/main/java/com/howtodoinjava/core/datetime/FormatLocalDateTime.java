@@ -5,16 +5,18 @@ import java.time.format.DateTimeFormatter;
 
 public class FormatLocalDateTime {
 
+  final static DateTimeFormatter ISO_FORMATTER = DateTimeFormatter.ISO_DATE_TIME;
+  final static DateTimeFormatter CUSTOM_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
   public static void main(String[] args) {
     LocalDateTime currentDateTime = LocalDateTime.now();
     System.out.println(currentDateTime);
 
-    DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-    String formattedDateTime = currentDateTime.format(formatter);
+    String formattedDateTime = currentDateTime.format(ISO_FORMATTER);
     System.out.println(formattedDateTime);
 
-    DateTimeFormatter customFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");;
-    String formattedString = currentDateTime.format(customFormat);
+
+    String formattedString = currentDateTime.format(CUSTOM_FORMATTER);
     System.out.println(formattedString);
   }
 
