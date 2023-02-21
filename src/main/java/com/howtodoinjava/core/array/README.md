@@ -32,10 +32,11 @@
 4\. Conversions
 ---------------
 
-*   [Array of Primitives to Array to objects](https://howtodoinjava.com/java/array/convert-between-array-of-primitives-and-objects/)
-*   [Convert between Array and List](https://howtodoinjava.com/java/array/convert-between-list-and-array/)
-*   [Convert between Stream and Array](https://howtodoinjava.com/java/array/convert-between-stream-and-array/)
-*   [Java String to String Array](https://howtodoinjava.com/java/array/string-to-string-array/)
+* [Array of Primitives to Array to objects](https://howtodoinjava.com/java/array/convert-between-array-of-primitives-and-objects/)
+* [Convert between Array and List](https://howtodoinjava.com/java/array/convert-between-list-and-array/)
+* [Convert between Stream and Array](https://howtodoinjava.com/java/array/convert-between-stream-and-array/)
+* [Java String to String Array](https://howtodoinjava.com/java/array/string-to-string-array/)
+* [Convert a Primitive Array to List in Java](https://howtodoinjava.com/java/array/convert-primitive-array-to-list/)
 
 5\. Advance Topics
 ------------------
