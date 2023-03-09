@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employees>
+
+  <employee id="1">
+    <firstName>Lokesh</firstName>
+    <lastName>Gupta</lastName>
+    <department>
+      <id>101</id>
+      <name>IT</name>
+    </department>
+  </employee>
+
+  <employee id="2">
+    <firstName>Brian</firstName>
+    <lastName>Schultz</lastName>
+    <department>
+      <id>102</id>
+      <name>HR</name>
+    </department>
+  </employee>
+
+</employees>
