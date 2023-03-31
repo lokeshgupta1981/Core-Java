@@ -1,6 +1,6 @@
 package com.howtodoinjava.datastructure;
 
-public class Main {
+public class TestStackImpl {
 
   public static void main(String[] args) {
     Stack stack = new Stack(5);
