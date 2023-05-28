@@ -9,3 +9,5 @@
 * [Inverting a Map In Java](https://howtodoinjava.com/java/collections/invert-java-map/)
 * [Convert List to Map](https://howtodoinjava.com/java/collections/convert-list-to-map/)
 * [Find Smallest and Largest Value in a Map](https://howtodoinjava.com/java/collections/hashmap/smallest-largest-value-in-map/)
+* [Java ConcurrentSkipListMap](https://howtodoinjava.com/java/collections/concurrentskiplistmap/)
+* [Java Map computeIfAbsent()](https://howtodoinjava.com/java/collections/hashmap/map-computeifabsent/)
