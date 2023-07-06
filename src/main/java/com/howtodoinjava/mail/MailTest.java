@@ -6,8 +6,8 @@ public class MailTest {
 
   public static void main(String[] args) {
 
-    EmailSender.sendPlainTextEmail("admin@eprindia.in",
-        "lokeshgupta1981@gmail.com",
+    EmailSender.sendPlainTextEmail("sender@gmail.in",
+        "receiver@gmail.com",
         "Test Email",
         List.of("Hello", "World"),
         true);
