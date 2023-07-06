@@ -18,8 +18,8 @@ import java.util.Properties;
 public class EmailSenderWithSSL {
 
   private static final Properties PROPERTIES = new Properties();
-  private static final String USERNAME = "admin@eprindia.in";
-  private static final String PASSWORD = "qyuuiyuzjphpoaay";
+  private static final String USERNAME = "admin@gmail.in";
+  private static final String PASSWORD = "app-password";
   private static final String HOST = "smtp.gmail.com";
 
   static {
