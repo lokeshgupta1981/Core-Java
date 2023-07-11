@@ -5,38 +5,39 @@ import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class ArraySortAlphabatical {
-    public static void main(final String[] args) {
 
-        // Unsorted string array
-        String[] strArray = { "Alex", "Charles", "Dean", "Amanda", "Brian" };
+  public static void main(final String[] args) {
 
-        // Sorting the strings
-        strArray = Stream.of(strArray)
-            .sorted()
-            .toArray(String[]::new);
+    // Unsorted string array
+    String[] strArray = {"Alex", "Charles", "Dean", "Amanda", "Brian"};
 
-        // Sorted array
-        System.out.println("Sorted : " + Arrays.toString(strArray));
+    // Sorting the strings
+    strArray = Stream.of(strArray)
+        .sorted()
+        .toArray(String[]::new);
 
-        strArray = Stream.of(strArray)
-            .sorted(Comparator.reverseOrder())
-            .toArray(String[]::new);
+    // Sorted array
+    System.out.println("Sorted : " + Arrays.toString(strArray));
 
-        // Reverse Sorted array
-        System.out.println("Reverse Sorted : " + Arrays.toString(strArray));
+    strArray = Stream.of(strArray)
+        .sorted(Comparator.reverseOrder())
+        .toArray(String[]::new);
 
-        strArray = new String[] { "Alex", "Charles", "Dean", "Amanda",
-                "Brian" };
+    // Reverse Sorted array
+    System.out.println("Reverse Sorted : " + Arrays.toString(strArray));
 
-        // Sorting the strings
-        Arrays.sort(strArray);
+    strArray = new String[]{"Alex", "Charles", "Dean", "Amanda",
+        "Brian"};
 
-        // Sorted array
-        System.out.println("Sorted : " + Arrays.toString(strArray));
+    // Sorting the strings
+    Arrays.sort(strArray);
 
-        Arrays.sort(strArray, Comparator.reverseOrder());
+    // Sorted array
+    System.out.println("Sorted : " + Arrays.toString(strArray));
 
-        // Reverse Sorted array
-        System.out.println("Reverse Sorted : " + Arrays.toString(strArray));
-    }
+    Arrays.sort(strArray, Comparator.reverseOrder());
+
+    // Reverse Sorted array
+    System.out.println("Reverse Sorted : " + Arrays.toString(strArray));
+  }
 }
