@@ -1,17 +1,20 @@
 package com.howtodoinjava.core.datatypes.decimalandhexadecimal.hextodecimal;
 
+
 public class FloatingPointHexToDecimal {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        String doubleHex = "0x1.4d70a3d70a3d7p8";
+    String myString = "BF800000";
+    Long i = Long.parseLong(myString, 16);
+    Float f = Float.intBitsToFloat(i.intValue());
 
-        String floatHex = "0x1.4d70a4p8";
+    //converted float value
+    System.out.println(f);
 
-        System.out.println(Float.parseFloat(floatHex));
+    //Convert the float back to hex and verify
+    System.out.println(Integer.toHexString(Float.floatToIntBits(f)));
 
-        System.out.println(Double.parseDouble(doubleHex));
-
-    }
+  }
 
 }

@@ -1,36 +1,23 @@
 package com.howtodoinjava.core.datatypes.decimalandhexadecimal.hextodecimal;
 
-import java.math.BigDecimal;
-
 public class ExampleUsingRawMethod {
 
-    public static BigDecimal convertToDecimal(String hexadecimalString) {
+  public static int convertHexToDecimal(String hex) {
 
-        String tokens = "0123456789ABCDEF";
+    String tokens = "0123456789ABCDEF";
+    hex = hex.toUpperCase();
+    int result = 0;
 
-        hexadecimalString = hexadecimalString.toUpperCase();
+    for (int i = 0; i < hex.length(); i++) {
 
-        BigDecimal result = new BigDecimal(0);
-
-        BigDecimal multiplicand = new BigDecimal(16);
-
-        for (int i = 0; i < hexadecimalString.length(); i++) {
-
-            int n = tokens.indexOf(hexadecimalString.charAt(i));
-
-            result = result.multiply(multiplicand).add(new BigDecimal(n));
-
-
-        }
-
-        return result;
-
+      int n = tokens.indexOf(hex.charAt(i));
+      result = result * 16 + n;
     }
+    return result;
+  }
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        System.out.println(convertToDecimal("10D"));
-
-    }
-
+    System.out.println(convertHexToDecimal("10D"));
+  }
 }
