@@ -25,20 +25,41 @@ public class JsonArrayToList {
 
   public static void main(String[] args) throws IOException, URISyntaxException {
 
+    //Avoid declaring static methods
+    JsonArrayToList instance = new JsonArrayToList();
+    List<Person> personList;
+
     URL fileUrl = JsonArrayToList.class.getClassLoader().getResource("data.json");
     Path filePath = Paths.get(fileUrl.toURI());
     String jsonArray = Files.readString(filePath);
 
-    System.out.println(jsonArray);
+    //System.out.println(jsonArray);
 
-    usingJson(jsonArray);
-    usingGson(jsonArray);
-    usingJackson(jsonArray);
+    personList = instance.usingJson(jsonArray);
+
+    Assertions.assertEquals(3, personList.size());
+    Assertions.assertEquals(1, personList.get(0).getId());
+    Assertions.assertEquals("Alex", personList.get(0).getName());
+    Assertions.assertEquals(41, personList.get(0).getAge());
+
+    personList = instance.usingGson(jsonArray);
+
+    Assertions.assertEquals(3, personList.size());
+    Assertions.assertEquals(1, personList.get(0).getId());
+    Assertions.assertEquals("Alex", personList.get(0).getName());
+    Assertions.assertEquals(41, personList.get(0).getAge());
+
+    personList = instance.usingJackson(jsonArray);
+
+    Assertions.assertEquals(3, personList.size());
+    Assertions.assertEquals(1, personList.get(0).getId());
+    Assertions.assertEquals("Alex", personList.get(0).getName());
+    Assertions.assertEquals(41, personList.get(0).getAge());
   }
 
-  static void usingJson(String json) {
+  List<Person> usingJson(String json) {
     JSONArray jsonArray = new JSONArray(json);
-    List<Person> arrayList = new ArrayList<>();
+    List<Person> personList = new ArrayList<>();
 
     for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -49,35 +70,25 @@ public class JsonArrayToList {
       int age = jsonPerson.getInt("age");
 
       Person person = new Person(id, name, age);
-      arrayList.add(person);
+      personList.add(person);
     }
-
-    Assertions.assertEquals(3, arrayList.size());
-    Assertions.assertEquals(1, arrayList.get(0).getId());
-    Assertions.assertEquals("Alex", arrayList.get(0).getName());
-    Assertions.assertEquals(41, arrayList.get(0).getAge());
+    return personList;
   }
 
-  static void usingGson(String jsonArray) {
+  List<Person> usingGson(String jsonArray) {
     Gson gson = new Gson();
     Type listType = new TypeToken<List<Person>>() {}.getType();
 
-    List<Person> gsonList = gson.fromJson(jsonArray, listType);
-    Assertions.assertEquals(3, gsonList.size());
-    Assertions.assertEquals(1, gsonList.get(0).getId());
-    Assertions.assertEquals("Alex", gsonList.get(0).getName());
-    Assertions.assertEquals(41, gsonList.get(0).getAge());
+    List<Person> personList = gson.fromJson(jsonArray, listType);
+    return personList;
   }
 
-  static void usingJackson(String jsonArray) throws JsonProcessingException {
+  List<Person> usingJackson(String jsonArray) throws JsonProcessingException {
     ObjectMapper objectMapper = new ObjectMapper();
     TypeReference<List<Person>> jacksonTypeReference = new TypeReference<>() {};
 
-    List<Person> jacksonList = objectMapper.readValue(jsonArray, jacksonTypeReference);
-    Assertions.assertEquals(3, jacksonList.size());
-    Assertions.assertEquals(1, jacksonList.get(0).getId());
-    Assertions.assertEquals("Alex", jacksonList.get(0).getName());
-    Assertions.assertEquals(41, jacksonList.get(0).getAge());
+    List<Person> personList = objectMapper.readValue(jsonArray, jacksonTypeReference);
+    return personList;
   }
 }
 
