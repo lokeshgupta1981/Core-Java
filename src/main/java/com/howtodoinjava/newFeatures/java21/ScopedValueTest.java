@@ -1,11 +1,13 @@
-import java.util.concurrent.StructuredTaskScope;
+package com.howtodoinjava.newFeatures.java21;
+
+//import java.util.concurrent.StructuredTaskScope;
 
 public class ScopedValueTest {
 
   //public static ThreadLocal<String> CONTEXT = ThreadLocal.withInitial(() -> null);
   //public static InheritableThreadLocal<String> CONTEXT = new InheritableThreadLocal();
 
-  private static final ScopedValue<String> CONTEXT = ScopedValue.newInstance();
+  //private static final ScopedValue<String> CONTEXT = ScopedValue.newInstance();
 
 
 
@@ -33,7 +35,7 @@ public class ScopedValueTest {
 
     ScopedValueTest instance = new ScopedValueTest();
 
-    ScopedValue.runWhere(CONTEXT, "Test Value", () -> {
+    /*ScopedValue.runWhere(CONTEXT, "Test Value", () -> {
 
       System.out.println("In parent thread start the scoped value is: " + CONTEXT.get());
       instance.doSomething();
@@ -41,7 +43,7 @@ public class ScopedValueTest {
     });
 
     System.out.println("Outside bounded scope isBound() is: " + CONTEXT.isBound()); 
-    System.out.println("Outside bounded scope the scoped value is: " + CONTEXT.orElse(null));
+    System.out.println("Outside bounded scope the scoped value is: " + CONTEXT.orElse(null));*/
   
 
   
@@ -72,17 +74,17 @@ public class ScopedValueTest {
     parentThread.start();*/
   }
 
-  public void doSomething() {
+  /*public void doSomething() {
     System.out.println("In doSomething() and parent scope: " + CONTEXT.get());
     ScopedValue.runWhere(CONTEXT, "Changed Value", () -> {
       System.out.println("In doSomething() and child scope: " + CONTEXT.get());
       doSomethingAgain();
     });
-  }
+  }*/
 
-  public void doSomethingAgain() {
+  /*public void doSomethingAgain() {
     System.out.println("In doSomethingAgain() and child scope: " + CONTEXT.get());
-  }
+  }*/
 
   /*static void doSomething() {
       System.out.println("Scoped Value in doSomething(): " + CONTEXT.get());
