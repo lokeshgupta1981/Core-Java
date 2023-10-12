@@ -1,41 +1,46 @@
 package com.howtodoinjava.newFeatures.java21;
 
-//import java.util.concurrent.StructuredTaskScope;
+import java.util.concurrent.StructuredTaskScope;
 
 public class ScopedValueTest {
 
   //public static ThreadLocal<String> CONTEXT = ThreadLocal.withInitial(() -> null);
-  //public static InheritableThreadLocal<String> CONTEXT = new InheritableThreadLocal();
-
-  //private static final ScopedValue<String> CONTEXT = ScopedValue.newInstance();
-
-
+  //public static InheritableThreadLocal<String> CONTEXT = new InheritableThreadLocal<>();
+  private static final ScopedValue<String> CONTEXT = ScopedValue.newInstance();
 
   public static void main(String[] args) {
 
-
-
-    /*ScopedValue.runWhere(CONTEXT, "TestValue", () -> {
+    ScopedValue.runWhere(CONTEXT, "TestValue", () -> {
 
       doSomething();
 
       try (var scope = new StructuredTaskScope<String>()) {
 
-        scope.fork(() -> insideChildThread());
+        scope.fork(() -> doSomethingInChildThread());
 
-        try{
+        try {
           scope.join();
         } catch (InterruptedException ex) {
           //...
         }
-        
+
       }
-    });*/
+    });
+  }
+
+  static void doSomething() {
+    System.out.println("Scoped Value in doSomething(): " + CONTEXT.get());
+  }
+
+  static String doSomethingInChildThread() {
+    System.out.println("Scoped Value in insideChildThread(): " + CONTEXT.get());
+    return CONTEXT.get();
+  }
 
 
-    ScopedValueTest instance = new ScopedValueTest();
+    /*ScopedValueTest instance = new ScopedValueTest();
 
-    /*ScopedValue.runWhere(CONTEXT, "Test Value", () -> {
+    ScopedValue.runWhere(CONTEXT, "Test Value", () -> {
 
       System.out.println("In parent thread start the scoped value is: " + CONTEXT.get());
       instance.doSomething();
@@ -43,24 +48,11 @@ public class ScopedValueTest {
     });
 
     System.out.println("Outside bounded scope isBound() is: " + CONTEXT.isBound()); 
-    System.out.println("Outside bounded scope the scoped value is: " + CONTEXT.orElse(null));*/
-  
+    System.out.println("Outside bounded scope the scoped value is: " + CONTEXT.orElse(null));
 
-  
+    Thread parentThread = new Thread(() -> {
 
-
-
-
-
-
-
-
-
-
-
-    /*Thread parentThread = new Thread(() -> {
-
-      CONTEXT.set("TestValue");
+      //CONTEXT.set("TestValue");
       insideParentThread_1();
 
       Thread childThread = new Thread(() -> {
@@ -71,8 +63,8 @@ public class ScopedValueTest {
       insideParentThread_2();
     });
 
-    parentThread.start();*/
-  }
+    parentThread.start();
+  }*/
 
   /*public void doSomething() {
     System.out.println("In doSomething() and parent scope: " + CONTEXT.get());
@@ -80,13 +72,13 @@ public class ScopedValueTest {
       System.out.println("In doSomething() and child scope: " + CONTEXT.get());
       doSomethingAgain();
     });
-  }*/
+  }
 
-  /*public void doSomethingAgain() {
+  public void doSomethingAgain() {
     System.out.println("In doSomethingAgain() and child scope: " + CONTEXT.get());
-  }*/
+  }
 
-  /*static void doSomething() {
+  static void doSomething1() {
       System.out.println("Scoped Value in doSomething(): " + CONTEXT.get());
   }
 
