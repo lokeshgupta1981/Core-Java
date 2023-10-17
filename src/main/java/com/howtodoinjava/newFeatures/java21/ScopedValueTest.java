@@ -29,11 +29,11 @@ public class ScopedValueTest {
   }
 
   static void doSomething() {
-    System.out.println("Scoped Value in doSomething(): " + CONTEXT.get());
+    System.out.println(STR."Scoped Value in doSomething(): \{CONTEXT.get()}");
   }
 
   static String doSomethingInChildThread() {
-    System.out.println("Scoped Value in insideChildThread(): " + CONTEXT.get());
+    System.out.println(STR."Scoped Value in insideChildThread(): \{CONTEXT.get()}");
     return CONTEXT.get();
   }
 

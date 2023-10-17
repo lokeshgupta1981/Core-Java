@@ -47,8 +47,7 @@ public class StructuredConcurrency {
 
       System.out.println("Response is received from all workers...");
       //The subtasks have completed by now so process the result
-      return new Response(accountDetailsFuture.get(),
-          linkedAccountsFuture.get(),
+      return new Response(accountDetailsFuture.get(), linkedAccountsFuture.get(),
           userDetailsFuture.get());
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
