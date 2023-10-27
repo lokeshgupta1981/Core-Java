@@ -1,10 +1,8 @@
 package com.howtodoinjava.core.security;
 
-import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.security.spec.KeySpec;
 import java.util.Base64;
-
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
@@ -14,53 +12,65 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class AES256 {
 
-	private AES256(){
-	}
+	private static final int KEY_LENGTH = 256;
+	private static final int ITERATION_COUNT = 65536;
 
-	private static final String SECRET_KEY = "my_super_secret_key_ho_ho_ho";
-	private static final byte[] SALT;
-	private static final SecureRandom random; 
-	private static final IvParameterSpec ivspec;
-	static {
-		random = new SecureRandom();
-		
-		SALT = new byte[16];
-		random.nextBytes(SALT);
-		
-		byte[] bytesIV = new byte[16];
-	    random.nextBytes(bytesIV);
-	    ivspec = new IvParameterSpec(bytesIV);
-	}
+	public static String encrypt(String strToEncrypt, String secretKey, String salt) {
 
-	public static String encrypt(String strToEncrypt) {
 		try {
+
+			SecureRandom secureRandom = new SecureRandom();
+			byte[] iv = new byte[16];
+			secureRandom.nextBytes(iv);
+			IvParameterSpec ivspec = new IvParameterSpec(iv);
+
 			SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-			KeySpec spec = new PBEKeySpec(SECRET_KEY.toCharArray(), SALT, 65536, 256);
+			KeySpec spec = new PBEKeySpec(secretKey.toCharArray(), salt.getBytes(), ITERATION_COUNT, KEY_LENGTH);
 			SecretKey tmp = factory.generateSecret(spec);
-			SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
+			SecretKeySpec secretKeySpec = new SecretKeySpec(tmp.getEncoded(), "AES");
 
 			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-			cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivspec);
-			return Base64.getEncoder().encodeToString(cipher.doFinal(strToEncrypt.getBytes(StandardCharsets.UTF_8)));
+			cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivspec);
+
+			byte[] cipherText = cipher.doFinal(strToEncrypt.getBytes("UTF-8"));
+			byte[] encryptedData = new byte[iv.length + cipherText.length];
+			System.arraycopy(iv, 0, encryptedData, 0, iv.length);
+			System.arraycopy(cipherText, 0, encryptedData, iv.length, cipherText.length);
+
+			return Base64.getEncoder().encodeToString(encryptedData);
 		} catch (Exception e) {
-			System.out.println("Error while encrypting: " + e.toString());
+			// Handle the exception properly
+			e.printStackTrace();
+			return null;
 		}
-		return null;
 	}
 
-	public static String decrypt(String strToDecrypt) {
-		try {
-			SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-			KeySpec spec = new PBEKeySpec(SECRET_KEY.toCharArray(), SALT, 65536, 256);
-			SecretKey tmp = factory.generateSecret(spec);
-			SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
+	public static String decrypt(String strToDecrypt, String secretKey, String salt) {
 
-			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-			cipher.init(Cipher.DECRYPT_MODE, secretKey, ivspec);
-			return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt)));
+		try {
+
+			byte[] encryptedData = Base64.getDecoder().decode(strToDecrypt);
+			byte[] iv = new byte[16];
+			System.arraycopy(encryptedData, 0, iv, 0, iv.length);
+			IvParameterSpec ivspec = new IvParameterSpec(iv);
+
+			SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+			KeySpec spec = new PBEKeySpec(secretKey.toCharArray(), salt.getBytes(), ITERATION_COUNT, KEY_LENGTH);
+			SecretKey tmp = factory.generateSecret(spec);
+			SecretKeySpec secretKeySpec = new SecretKeySpec(tmp.getEncoded(), "AES");
+
+			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+			cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivspec);
+
+			byte[] cipherText = new byte[encryptedData.length - 16];
+			System.arraycopy(encryptedData, 16, cipherText, 0, cipherText.length);
+
+			byte[] decryptedText = cipher.doFinal(cipherText);
+			return new String(decryptedText, "UTF-8");
 		} catch (Exception e) {
-			System.out.println("Error while decrypting: " + e.toString());
+			// Handle the exception properly
+			e.printStackTrace();
+			return null;
 		}
-		return null;
 	}
 }
