@@ -207,6 +207,7 @@
         <configuration>
           <source>21</source>
           <target>21</target>
+          <enablePreview>true</enablePreview>
           <annotationProcessorPaths>
             <path>
               <groupId>org.projectlombok</groupId>
@@ -224,6 +225,7 @@
               <version>${jmh.version}</version>
             </path>
           </annotationProcessorPaths>
+          <compilerArgs>--enable-preview</compilerArgs>
         </configuration>
       </plugin>
       <plugin>
