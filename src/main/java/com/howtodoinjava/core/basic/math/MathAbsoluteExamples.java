@@ -1,4 +1,4 @@
-package com.howtodoinjava.core.basic;
+package com.howtodoinjava.core.basic.math;
 
 public class MathAbsoluteExamples {
 
