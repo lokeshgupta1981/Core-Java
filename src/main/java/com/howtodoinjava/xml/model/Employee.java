@@ -2,18 +2,16 @@ package com.howtodoinjava.xml.model;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
-@XmlRootElement(name="employee")
+@XmlRootElement(name = "employee")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Employee implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  @XmlAttribute
+  //@XmlAttribute
   private Integer id;
   private String firstName;
   private String lastName;
@@ -24,7 +22,7 @@ public class Employee implements Serializable {
     super();
   }
 
-  public Employee(int id, String fName, String lName, Department department) {
+  public Employee(int id, String fName, String lName, String location, Department department) {
     super();
     this.id = id;
     this.firstName = fName;
@@ -75,7 +73,6 @@ public class Employee implements Serializable {
 
   @Override
   public String toString() {
-    return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", department="
-        + department + "]";
+    return STR."Employee{id=\{id}, firstName='\{firstName}\{'\''}, lastName='\{lastName}\{'\''}, location='\{location}\{'\''}, department=\{department}\{'}'}";
   }
 }
