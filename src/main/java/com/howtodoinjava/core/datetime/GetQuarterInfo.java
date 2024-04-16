@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.IsoFields;
 import java.time.temporal.TemporalAdjusters;
+import net.bytebuddy.asm.Advice.Local;
 
 public class GetQuarterInfo {
 
@@ -23,5 +24,9 @@ public class GetQuarterInfo {
     LocalDate lastDay = firstDay.plusMonths(2).with(TemporalAdjusters.lastDayOfMonth());
     System.out.println(firstDay);
     System.out.println(lastDay);
+
+    //Quarter between two dates
+    long quarterCount = IsoFields.QUARTER_YEARS.between(firstDay, lastDay);
+    System.out.println(quarterCount);
   }
 }
