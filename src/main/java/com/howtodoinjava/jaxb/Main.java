@@ -1,10 +1,15 @@
 package com.howtodoinjava.jaxb;
 
+import com.howtodoinjava.xml.model.Department;
+import com.howtodoinjava.xml.model.Employee;
+import java.io.File;
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -24,6 +29,16 @@ public class Main {
         JAXBContext context6 = getJAXBContext(Book.class);
         JAXBContext context7 = getJAXBContext(Book.class);
         JAXBContext context8 = getJAXBContext(Book.class);
+
+        JAXBContext jaxbContext 	= JAXBContext.newInstance( Employee.class );
+        Marshaller jaxbMarshaller 	= jaxbContext.createMarshaller();
+
+        Employee employee = new Employee(1, "Lokesh", "Gupta", "India", new Department(101, "IT"));
+
+        //Overloaded methods to marshal to different outputs
+        jaxbMarshaller.marshal(employee, System.out);
+        jaxbMarshaller.marshal(employee, new File("output.xml"));
+        jaxbMarshaller.marshal(employee, new StringWriter());
     }
 
     @SuppressWarnings("rawtypes")
