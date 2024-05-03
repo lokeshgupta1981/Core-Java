@@ -2,7 +2,6 @@ package com.howtodoinjava.core.streams;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,11 +9,10 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 public class FilterAMap {
 
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
 
     Map<Integer, User> usersMap = Map.of(
@@ -27,7 +25,7 @@ public class FilterAMap {
         7, new User(7, "Don"),
         8, new User(8, "Dave"));
 
-    //1
+    // Collect Keys filtered by List of Keys
     List<Integer> idList = List.of(1, 3, 5, 7);
 
     Map<Integer, User> filteredMap1 = usersMap.entrySet()
@@ -37,28 +35,30 @@ public class FilterAMap {
 
     System.out.println(filteredMap1);
 
+    // Collect entries filtered by List of Keys
+
     Map<Integer, User> filteredMap2 = usersMap.entrySet()
         .stream()
-        .filter(entry -> idList.contains(entry.getValue().getId()))
+        .filter(entry -> idList.contains(entry.getValue().id()))
         .collect(Collectors.toUnmodifiableMap(Map.Entry::getKey, Map.Entry::getValue));
 
     System.out.println(filteredMap2);
 
-    //2
+    // Collect Values filtered by List of Keys
 
     List<User> usersList1 = usersMap.values()
         .stream()
-        .filter(user -> idList.contains(user.getId()))
-        .collect(Collectors.toUnmodifiableList());
+        .filter(user -> idList.contains(user.id()))
+        .toList();
 
     System.out.println(usersList1);
 
     //3
     List<User> usersList2 = new ArrayList<>();
 
-    usersMap.entrySet().forEach(entry -> {
-      if (idList.contains(entry.getValue().getId())) {
-        usersList2.add(entry.getValue());
+    usersMap.forEach((_, value) -> {
+      if (idList.contains(value.id())) {
+        usersList2.add(value);
       }
     });
 
@@ -66,7 +66,7 @@ public class FilterAMap {
 
     System.out.println("====================");
 
-    //4 Using filters
+    // Using Generic filters
     Predicate<Integer> predicate = key -> key > 4;
     Comparator<Integer> comparator = Comparator.comparing(Function.identity());
 
@@ -76,22 +76,23 @@ public class FilterAMap {
     Map<Integer, User> filteredAndSortedMap = Filters.sortedByKey(usersMap, predicate, comparator);
     System.out.println(filteredAndSortedMap);
 
-    Map<Integer, User> filteredAndSortedMapReversed = Filters.sortedByKeyReversed(usersMap, predicate, comparator);
-    System.out.println(filteredAndSortedMapReversed);
-
-    Predicate<User> valuePredicate = user -> user.getName().startsWith("A");
-    Comparator<User> valueComparator = Comparator.comparing(User::getName);
+    Predicate<User> valuePredicate = user -> user.name().startsWith("D");
+    Comparator<User> valueComparator = Comparator.comparing(User::name);
 
     Map<Integer, User> filteredMapByValue = Filters.byValue(usersMap, valuePredicate);
     System.out.println(filteredMapByValue);
 
-    Map<Integer, User> filteredAndSortedMapByValue = Filters.sortedByValue(usersMap, valuePredicate, valueComparator);
+    Map<Integer, User> filteredAndSortedMapByValue = Filters.sortedByValue(usersMap, valuePredicate,
+        valueComparator);
     System.out.println(filteredAndSortedMapByValue);
 
-    Map<Integer, User> filteredAndSortedMapReversedByValue = Filters.sortedByValueReversed(usersMap, valuePredicate, valueComparator);
-    System.out.println(filteredAndSortedMapReversedByValue);
+    Map<Integer, User> filteredMapByKeyAndValue = Filters.byValue(
+        Filters.byKey(usersMap, predicate), valuePredicate);
+    System.out.println(filteredMapByKeyAndValue);
 
-    Map<Integer, User> filteredMapByKeyAndValue = Filters.byValue(Filters.byKey(usersMap, predicate), valuePredicate);
+    Map<Integer, User> filteredMapByKeyAndValue_V2 = usersMap.entrySet().stream()
+        .filter((entry) -> entry.getKey() > 4 && entry.getValue().name().startsWith("D"))
+        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     System.out.println(filteredMapByKeyAndValue);
   }
 
@@ -101,8 +102,7 @@ public class FilterAMap {
       throw new AssertionError("Cannot be instantiated");
     }
 
-    public static <K, V> Map<K, V> byKey(
-        Map<K, V> map, Predicate<K> predicate) {
+    public static <K, V> Map<K, V> byKey(Map<K, V> map, Predicate<K> predicate) {
 
       Objects.requireNonNull(map);
       Objects.requireNonNull(predicate);
@@ -127,18 +127,9 @@ public class FilterAMap {
           .sorted(Map.Entry.comparingByKey(c))
           .collect(Collectors.toMap(
               Map.Entry::getKey, Map.Entry::getValue,
-              (c1, c2) -> c2, LinkedHashMap::new));
+              (_, c2) -> c2, LinkedHashMap::new));
     }
 
-    public static <K, V> Map<K, V> sortedByKeyReversed(
-        Map<K, V> map, Predicate<K> predicate, Comparator<K> c) {
-
-      Objects.requireNonNull(map);
-      Objects.requireNonNull(predicate);
-      Objects.requireNonNull(c);
-
-      return sortedByKey(map, predicate, c.reversed());
-    }
 
     public static <K, V> Map<K, V> byValue(
         Map<K, V> map, Predicate<V> predicate) {
@@ -166,25 +157,10 @@ public class FilterAMap {
           .sorted(Map.Entry.comparingByValue(c))
           .collect(Collectors.toMap(
               Map.Entry::getKey, Map.Entry::getValue,
-              (c1, c2) -> c2, LinkedHashMap::new));
-    }
-
-    public static <K, V> Map<K, V> sortedByValueReversed(Map<K, V> map,
-        Predicate<V> predicate, Comparator<V> c) {
-
-      Objects.requireNonNull(map);
-      Objects.requireNonNull(predicate);
-      Objects.requireNonNull(c);
-
-      return sortedByValue(map, predicate, c.reversed());
+              (_, c2) -> c2, LinkedHashMap::new));
     }
   }
 }
 
-@Data
-@AllArgsConstructor
-class User {
-
-  Integer id;
-  String name;
-}
+  record User(Integer id, String name) {
+  }
