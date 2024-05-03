@@ -9,6 +9,7 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import lombok.Data;
 
 public class FilterAMap {
 
@@ -162,5 +163,6 @@ public class FilterAMap {
   }
 }
 
-  record User(Integer id, String name) {
-  }
+record User(Integer id, String name) {
+
+}
