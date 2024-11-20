@@ -57,7 +57,8 @@ public class DistinctComplexTypes {
   @SuppressWarnings("unchecked")
   private static <T> Predicate<T> distinctByKeys(final Function<? super T, ?>... keyExtractors) 
   {
-    final Map<List<?>, Boolean> seen = new ConcurrentHashMap<>();
+    // Set doesn't need to be `concurrent` unless using parallel streams.
+    final Set<List<?>> seen = new HashSet<>();
      
     return t -> 
     {
@@ -65,14 +66,16 @@ public class DistinctComplexTypes {
                   .map(ke -> ke.apply(t))
                   .collect(Collectors.toList());
        
-      return seen.putIfAbsent(keys, Boolean.TRUE) == null;
+      return seen.add(keys);
     };
   }
   
   public static <T> Predicate<T> distinctByKeyClass(final Function<? super T, Object> keyExtractor) 
   {
-    Map<Object, Boolean> seen = new ConcurrentHashMap<>();
-    return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
+    // Set doesn't need to be `concurrent` unless using parallel streams.
+    Set<Object> seen = new HashSet<>();
+    // Set:add returns true if this set didn't already contain the specified value.
+    return t -> seen.add(keyExtractor.apply(t));
   }
 }
 
