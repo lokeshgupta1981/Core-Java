@@ -6,6 +6,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.stream.IntStream;
 
+/**
+ * Demonstrates reversing an array in place with
+ * {@link Collections#reverse(java.util.List)} (via {@link Arrays#asList}),
+ * a manual two-pointer swap loop, building a new reversed array with a
+ * stream, and {@link ArrayUtils#reverse(Object[])}.
+ */
 public class ReverseArray {
   public static void main(final String[] args) {
     // 1

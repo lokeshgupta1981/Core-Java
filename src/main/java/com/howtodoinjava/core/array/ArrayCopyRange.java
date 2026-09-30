@@ -3,6 +3,11 @@ package com.howtodoinjava.core.array;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Demonstrates extracting a sub-array using
+ * {@link Arrays#copyOfRange(Object[], int, int)}, and converting the
+ * resulting sub-array into a {@link List}.
+ */
 public class ArrayCopyRange {
   public static void main(String[] args) {
     String[] names = {"Alex", "Brian", "Charles", "David"};

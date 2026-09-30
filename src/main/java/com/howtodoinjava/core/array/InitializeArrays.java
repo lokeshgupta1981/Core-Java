@@ -2,6 +2,12 @@ package com.howtodoinjava.core.array;
 
 import java.util.Arrays;
 
+/**
+ * Demonstrates ways to declare, initialize, and resize arrays: array
+ * literals, {@code new}, default zero-initialization, {@link Arrays#fill},
+ * {@link Arrays#setAll}, {@link Arrays#copyOf}, and
+ * {@link Arrays#copyOfRange}.
+ */
 public class InitializeArrays {
   public static void main(String[] args) {
 

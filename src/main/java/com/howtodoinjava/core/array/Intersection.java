@@ -5,6 +5,13 @@ import java.util.HashSet;
 import java.util.Set;
 import org.junit.jupiter.api.Assertions;
 
+/**
+ * Demonstrates computing the intersection of two arrays using a
+ * {@link HashSet#retainAll} and using {@link Arrays#stream} with
+ * {@code filter}/{@code distinct}. Correctness is verified with JUnit
+ * {@link Assertions} rather than printed output, so a clean (silent) run
+ * with exit code 0 means all checks passed.
+ */
 public class Intersection {
 
   public static void main(String[] args) {

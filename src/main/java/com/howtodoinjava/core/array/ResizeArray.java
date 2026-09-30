@@ -3,6 +3,11 @@ package com.howtodoinjava.core.array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Demonstrates "resizing" a fixed-length array: arrays cannot be resized in
+ * place, so a larger array is created with {@link Arrays#copyOf}, or the
+ * contents are copied into a growable {@link ArrayList} instead.
+ */
 public class ResizeArray {
     public static void main(String[] args) {
         String[] originalArray = {"A", "B", "C", "D", "E"};
