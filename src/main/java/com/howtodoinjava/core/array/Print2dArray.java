@@ -2,7 +2,11 @@ package com.howtodoinjava.core.array;
 
 import java.util.Arrays;
 
-public class Print2dArray 
+/**
+ * Demonstrates printing a jagged 2D array using
+ * {@link Arrays#deepToString(Object[])}.
+ */
+public class Print2dArray
 {
 	public static void main(String[] args) 
     {

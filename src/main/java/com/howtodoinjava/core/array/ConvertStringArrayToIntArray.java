@@ -2,6 +2,12 @@ package com.howtodoinjava.core.array;
 
 import java.util.Arrays;
 
+/**
+ * Demonstrates parsing a {@code String[]} into an {@code int[]} (or
+ * {@code Integer[]}) with {@link Arrays#stream}, and safely handling
+ * unparsable entries by catching {@link NumberFormatException} inside the
+ * mapping function.
+ */
 public class ConvertStringArrayToIntArray {
 
   public static void main(String[] args) {

@@ -7,6 +7,11 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Demonstrates finding duplicate and unique elements in an array: via a
+ * frequency {@link Map} built with {@link Collectors#groupingBy}, and via a
+ * {@link HashSet} that tracks elements already seen.
+ */
 public class RemoveDuplicates {
 
   public static void main(String[] args) {

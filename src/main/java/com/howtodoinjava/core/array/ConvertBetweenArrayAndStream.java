@@ -5,6 +5,11 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 
+/**
+ * Demonstrates converting between arrays and streams: {@link Arrays#stream}
+ * for both object and primitive arrays, and {@link Stream#toArray} /
+ * {@link IntStream#toArray} to go back to an array.
+ */
 public class ConvertBetweenArrayAndStream {
   public static void main(final String[] args) {
     int[] primitiveArray = {0,1,2,3,4};

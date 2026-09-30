@@ -1,5 +1,9 @@
 package com.howtodoinjava.core.array;
 
+/**
+ * Demonstrates sorting the characters of a {@link String} alphabetically
+ * using a manual selection-sort over its {@code char[]} representation.
+ */
 public class SortStringAlphabetically {
 
   public static void main(String[] args) {

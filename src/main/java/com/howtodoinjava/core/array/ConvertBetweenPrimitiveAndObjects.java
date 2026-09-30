@@ -4,6 +4,11 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Arrays;
 
+/**
+ * Demonstrates boxing an {@code int[]} into an {@code Integer[]} and
+ * unboxing back, using both the Stream API and Apache Commons Lang's
+ * {@link ArrayUtils#toObject}/{@link ArrayUtils#toPrimitive}.
+ */
 public class ConvertBetweenPrimitiveAndObjects {
   public static void main(String[] args) {
     int[] primitiveArray = new int[]{0, 1, 2, 3, 4, 5};

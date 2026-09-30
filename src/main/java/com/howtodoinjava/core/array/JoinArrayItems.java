@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
+/**
+ * Demonstrates joining array/list elements into a single delimited string
+ * using {@link String#join}, {@link StringJoiner}, and
+ * {@link Collectors#joining}.
+ */
 @SuppressWarnings("unused")
 public class JoinArrayItems {
   public static void main(final String[] args) {

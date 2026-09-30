@@ -13,6 +13,12 @@ import org.apache.commons.lang3.ArrayUtils;
 import com.google.common.collect.ObjectArrays;
 import com.google.common.primitives.Ints;
 
+/**
+ * Demonstrates several ways to concatenate two arrays: Apache Commons Lang's
+ * {@link ArrayUtils#addAll}, Guava's {@code ObjectArrays.concat}/{@code Ints.concat},
+ * a manual for-loop, {@link System#arraycopy}, and the Stream API
+ * ({@link IntStream#concat}/{@link Stream#concat}).
+ */
 public class ConcatArrays {
   public static void main(final String[] args) {
     String[] strArray1 = {"1", "2", "3"};
@@ -32,8 +38,8 @@ public class ConcatArrays {
     //Guava
     resultObj = ObjectArrays.concat(strArray1, strArray2, String.class);
     result = Ints.concat(intArray1, intArray2);
-    System.out.println(resultObj);
-    System.out.println(result);
+    System.out.println(resultObj); // note: prints the array's identity hash, not its contents
+    System.out.println(result);    // note: prints the array's identity hash, not its contents
 
     //1
     result = new int[intArray1.length + intArray2.length];

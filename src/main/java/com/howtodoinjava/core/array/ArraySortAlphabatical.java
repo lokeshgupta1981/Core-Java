@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Stream;
 
+/**
+ * Demonstrates sorting a {@code String[]} alphabetically and in reverse
+ * order, using both the Stream API ({@link Stream#sorted}) and
+ * {@link Arrays#sort(Object[], Comparator)}.
+ */
 public class ArraySortAlphabatical {
 
   public static void main(final String[] args) {
