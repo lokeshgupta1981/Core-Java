@@ -63,6 +63,7 @@
 * [Remove only trailing spaces of a String](https://howtodoinjava.com/java/string/remove-leading-trailing-whitespaces/)
 * [How to Reverse String in Java](https://howtodoinjava.com/java/puzzles/how-to-reverse-string-in-java/)
 * [Reverse words in a string in Java](https://howtodoinjava.com/java/string/reverse-words-in-string/)
+* Source code for the article [Reverse Words in a String in Java (Word Order and Letters)](https://howtodoinjava.com/java-examples/how-to-reverse-words-in-string/). Class `ReverseWordOrder` (Java 21+, commons-lang3), run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.string.ReverseWordOrder`.
 * [Reverse string in Java using recursion](https://howtodoinjava.com/java/string/reverse-string-using-recursion/)
 * [How to find duplicate words in String](https://howtodoinjava.com/java/string/how-to-find-duplicate-words-in-a-string-in-java/)
 * [How to find duplicate characters in a String](https://howtodoinjava.com/java/string/find-duplicate-characters/)
