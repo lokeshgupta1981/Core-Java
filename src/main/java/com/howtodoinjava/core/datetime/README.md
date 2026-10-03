@@ -32,7 +32,7 @@
 ## 4\. Parsing String to Date
 
 *   [Java Date Format Validation](https://howtodoinjava.com/java/date-time/date-validation/)
-*   [Convert String to UTC Date Time](https://howtodoinjava.com/java/date-time/parse-string-to-date-time-utc-gmt/)
+*   Source code for the article [Parse a String to UTC Date Time in Java](https://howtodoinjava.com/java/date-time/parse-string-to-date-time-utc-gmt/). Example class: `ParseStringToUtc.java` (Java 21+, run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.datetime.ParseStringToUtc`).
 *   [Convert String to ZonedDateTime](https://howtodoinjava.com/java/date-time/zoneddatetime-parse/)
 *   [Convert String to LocalDateTime](https://howtodoinjava.com/java/date-time/localdatetime-parse/)
 *   [Convert String to LocalDate](https://howtodoinjava.com/java/date-time/localdate-parse-string/)

@@ -37,7 +37,7 @@
 
 ## String Conversions
 
-* [Convert Java String to int](https://howtodoinjava.com/java/string/convert-string-to-int/)
+* Source code for the article [Java String to int: parseInt(), valueOf() and Safe Parsing](https://howtodoinjava.com/java/string/convert-string-to-int/). Class `StringToInt` (Java 21+, commons-lang3 3.21.0), run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.string.StringToInt`.
 * [Convert int to String in Java](https://howtodoinjava.com/java/string/convert-int-to-string/)
 * [Convert String to Long](https://howtodoinjava.com/java/string/convert-string-to-long/)
 * [Convert Long to String in Java](https://howtodoinjava.com/java/string/convert-long-to-string/)
