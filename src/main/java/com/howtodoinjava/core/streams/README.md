@@ -7,6 +7,7 @@
 5. [Sort a Map by Keys](https://howtodoinjava.com/java/sort/java-sort-map-by-key/)
 6. [Sort a Map by Values](https://howtodoinjava.com/java/sort/java-sort-map-by-values/)
 7. [Java Stream to List: toList() vs Collectors.toList()](https://howtodoinjava.com/java8/convert-stream-to-list/)
+8. [Java Stream max() and min(): Find Max and Min Values](https://howtodoinjava.com/java8/stream-max-min-examples/)
 
 ## Java Stream to List
 
@@ -17,4 +18,15 @@ Source code for the article [Java Stream to List: toList() vs Collectors.toList(
 
 ```bash
 mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.streams.conversions.StreamToList
+```
+
+## Java Stream max() and min()
+
+Source code for the article [Java Stream max() and min(): Find Max and Min Values](https://howtodoinjava.com/java8/stream-max-min-examples/).
+
+- `minmax/StreamMaxMin.java`: `Stream.max()`, `Stream.min()`, `IntStream.max()`, `Collectors.maxBy()`, ties and `thenComparing()`, max per group with `groupingBy()` and `toMap()`, `summaryStatistics()`, `Collectors.teeing()`, `Collections.max()`, empty streams and `null` elements.
+- Java 21 or later (`Collectors.teeing()` needs Java 12+).
+
+```bash
+mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.streams.minmax.StreamMaxMin
 ```

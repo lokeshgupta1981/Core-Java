@@ -34,7 +34,7 @@
 *   [Java Date Format Validation](https://howtodoinjava.com/java/date-time/date-validation/)
 *   Source code for the article [Parse a String to UTC Date Time in Java](https://howtodoinjava.com/java/date-time/parse-string-to-date-time-utc-gmt/). Example class: `ParseStringToUtc.java` (Java 21+, run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.datetime.ParseStringToUtc`).
 *   [Convert String to ZonedDateTime](https://howtodoinjava.com/java/date-time/zoneddatetime-parse/)
-*   [Convert String to LocalDateTime](https://howtodoinjava.com/java/date-time/localdatetime-parse/)
+*   Source code for the article [Convert String to LocalDateTime in Java](https://howtodoinjava.com/java/date-time/localdatetime-parse/). Example class: `ParseStringToLocalDateTime.java` (Java 21+, run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.datetime.ParseStringToLocalDateTime`).
 *   [Convert String to LocalDate](https://howtodoinjava.com/java/date-time/localdate-parse-string/)
 *   [Parsing a String to java.util.Date](https://howtodoinjava.com/java/date-time/java-parse-string-to-date/)
 *   [Java Strict, Smart and Lenient Date Resolutions](https://howtodoinjava.com/java/date-time/resolverstyle-strict-date-parsing/)
