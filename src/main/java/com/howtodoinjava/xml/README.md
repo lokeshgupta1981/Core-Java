@@ -9,7 +9,10 @@
 * [Java Read XML with StAX Parser – Cursor & Iterator APIs](https://howtodoinjava.com/java/xml/read-xml-stax-parser-cursor-iterator/)
 * [Java JDOM2 – Read XML Example](https://howtodoinjava.com/java/xml/jdom2-read-parse-xml-examples/)
 * [Java XPath NamespaceContext – NameSpace Resolution Example](https://howtodoinjava.com/java/xml/xpath-namespace-resolution-example/)
-* [Java Read XML – Java DOM Parser Example](https://howtodoinjava.com/java/xml/read-xml-dom-parser-example/)
+* Source code for the article [Read XML File in Java using DOM Parser (with Examples)](https://howtodoinjava.com/java/xml/read-xml-dom-parser-example/).
+  Classes: DomParserExample (reading, XPath, String/InputStream, namespaces), DomXxeExample (XXE settings), DomMemoryExample (DOM vs SAX vs StAX heap).
+  Data: src/main/resources/xml/recipes.xml. Java 21 bytecode, tested on JDK 25, no extra dependencies. Run from the project root:
+  mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.xml.DomParserExample
 * [DOM Vs SAX Parser in Java](https://howtodoinjava.com/java/xml/dom-vs-sax-parser-in-java/)
 * [Java SAX Parser – Read XML Example](https://howtodoinjava.com/java/xml/sax-parser-read-xml-example/)
 * [Java XPath – How to Get Attribute Value](https://howtodoinjava.com/java/xml/xpath-get-attribute-value-xml/)

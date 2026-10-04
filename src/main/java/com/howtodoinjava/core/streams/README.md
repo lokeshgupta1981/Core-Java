@@ -8,6 +8,7 @@
 6. [Sort a Map by Values](https://howtodoinjava.com/java/sort/java-sort-map-by-values/)
 7. [Java Stream to List: toList() vs Collectors.toList()](https://howtodoinjava.com/java8/convert-stream-to-list/)
 8. [Java Stream max() and min(): Find Max and Min Values](https://howtodoinjava.com/java8/stream-max-min-examples/)
+9. [Java Stream Distinct by Multiple Fields (with Examples)](https://howtodoinjava.com/java8/stream-distinct-by-multiple-fields/)
 
 ## Java Stream to List
 
@@ -29,4 +30,16 @@ Source code for the article [Java Stream max() and min(): Find Max and Min Value
 
 ```bash
 mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.streams.minmax.StreamMaxMin
+```
+
+## Java Stream Distinct by Multiple Fields
+
+Source code for the article [Java Stream Distinct by Multiple Fields (with Examples)](https://howtodoinjava.com/java8/stream-distinct-by-multiple-fields/).
+
+- `distinct/DistinctByMultipleFields.java`: a `distinctByKey()` predicate with `ConcurrentHashMap.newKeySet()` and a composite key (`List.of()`, a record key, varargs key extractors), `Collectors.toMap()` with `LinkedHashMap` to keep the first, last or most played element, a `TreeSet` with a `Comparator`, `distinct()` with record `equals()`, counting duplicates, and the pitfalls of predicate reuse, `null` fields, string keys and parallel streams.
+- `distinct/DistinctComplexTypes.java`: the original `distinctByKeys()` and `CustomKey` examples.
+- Java 21 or later. The `Gatherer`-based `distinctBy()` shown in the article needs Java 24+ and is not part of this module.
+
+```bash
+mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.streams.distinct.DistinctByMultipleFields
 ```
