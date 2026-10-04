@@ -10,3 +10,4 @@
 8. [Thread Priority](https://howtodoinjava.com/java/multi-threading/java-thread-priority/)
 9. [Start a New Thread](https://howtodoinjava.com/java/multi-threading/create-start-threads/)
 10. [Resolving IllegalMonitorStateException In Java](https://howtodoinjava.com/java/multi-threading/java-illegalmonitorstateexception/)
+11. Source code for the article [Java Locks (with Examples)](https://howtodoinjava.com/java/multi-threading/how-to-use-locks-in-java-java-util-concurrent-locks-lock-tutorial-and-example/): the *locks* folder with *ReentrantLock*, *tryLock()*, *lockInterruptibly()*, fair locks, *ReadWriteLock*, *StampedLock*, *Condition* and virtual threads (Java 21).
