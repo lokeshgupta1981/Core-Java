@@ -57,7 +57,7 @@
 *   [Measure Elapsed Time](https://howtodoinjava.com/java/date-time/execution-elapsed-time/)
 *   [Difference Between Two Dates](https://howtodoinjava.com/java/date-time/calculate-difference-between-two-dates-in-java/)
 *   [Count number of days between two dates](https://howtodoinjava.com/java/date-time/calculate-days-between-dates/)
-*   [Get All Dates Between Two Dates](https://howtodoinjava.com/java/date-time/dates-between-two-dates/)
+*   Source code for the article [Get All Dates Between Two Dates in Java](https://howtodoinjava.com/java/date-time/dates-between-two-dates/). Example class: `GetAllDatesBetweenTwoDates.java` (Java 21+, run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.datetime.GetAllDatesBetweenTwoDates`).
 *   [Check if Date or LocalDate is Weekend](https://howtodoinjava.com/java/date-time/check-weekend/)
 *   [Calculate business days between two dates](https://howtodoinjava.com/java/date-time/calculate-business-days/)
 *   [Add or Subtract Business Days](https://howtodoinjava.com/java/date-time/add-subtract-business-days/)
