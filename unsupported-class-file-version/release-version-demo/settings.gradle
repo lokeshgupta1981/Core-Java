@@ -1,0 +1,6 @@
+plugins {
+    // Downloads a matching JDK when no installed JDK fits the toolchain
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+rootProject.name = 'release-version-demo'

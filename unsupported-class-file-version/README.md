@@ -20,6 +20,9 @@ how to read the class file version and which tools reject Java 25 class files.
 - *OldAsmTest* shows "Unsupported class file major version 69" from ASM 9.7.1.
 - *PriceServiceTest* mocks a Java 25 class with Mockito (Byte Buddy).
 - *OlderRuntimeTest* starts *Hello* on JDK 21 (runs only when JDK21_HOME is set).
+- *release-version-demo/* is a separate one-class project for the compile-time error
+  "release version 25 not supported" (article https://howtodoinjava.com/maven/release-version-not-supported/).
+  See its own README for the commands.
 
 ## Run
 
@@ -44,4 +47,19 @@ mvn package -Dmaven.compiler.release=21
 # Docker: JDK 25 build stage, JRE 25 runtime
 docker build -t fruit-app .
 docker run --rm fruit-app
+```
+
+## Compile-time error: release version 25 not supported
+
+The runtime error above appears when a Java 25 class file meets an older JVM or tool. The compile-time
+error appears earlier, when Maven runs javac from a JDK older than `maven.compiler.release`:
+
+```bash
+# This project stops at the enforcer rule on an older JDK
+JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 mvn validate   # Build this project with JDK 25 or newer ...
+
+# The demo project shows the plain javac error and the fixes (JAVA_HOME, toolchains, Gradle, Docker, CI)
+cd release-version-demo
+JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 mvn compile    # Fatal error compiling: error: release version 25 not supported
+JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 mvn package -Pjdk-toolchain -t toolchains-example.xml   # Maven on JDK 21, javac from JDK 25
 ```

@@ -1,0 +1,18 @@
+# Copy to .github/workflows/build.yml in the repository root.
+# The java-version must be the same as, or higher than, maven.compiler.release.
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+      - name: Build
+        run: mvn -B package
