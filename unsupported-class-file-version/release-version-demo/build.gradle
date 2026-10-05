@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.howtodoinjava'
+version = '1.0.0'
+
+java {
+    toolchain {
+        // Gradle compiles with a JDK 25 even when it runs on an older JDK
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+application {
+    mainClass = 'com.howtodoinjava.release.ReleaseInfo'
+}
