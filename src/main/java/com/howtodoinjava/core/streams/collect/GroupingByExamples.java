@@ -1,84 +1,134 @@
 package com.howtodoinjava.core.streams.collect;
 
 import static java.util.stream.Collectors.averagingDouble;
+import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.filtering;
 import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.groupingByConcurrent;
 import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.maxBy;
+import static java.util.stream.Collectors.partitioningBy;
+import static java.util.stream.Collectors.summingInt;
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toMap;
 
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import org.javatuples.Pair;
+import java.util.TreeMap;
+import java.util.concurrent.ConcurrentMap;
 
+/**
+ * Examples for the article "Java Stream groupingBy(): Group and Aggregate a List".
+ * Each block prints the map that the article shows next to the snippet.
+ */
 public class GroupingByExamples {
 
-  public static void main(String[] args) {
-    List<Person> persons = List.of(
-        new Person(1, "Alex", 100d, new Department(1, "HR")),
-        new Person(2, "Brian", 200d, new Department(1, "HR")),
-        new Person(3, "Charles", 900d, new Department(2, "Finance")),
-        new Person(4, "David", 200d, new Department(2, "Finance")),
-        new Person(5, "Edward", 200d, new Department(2, "Finance")),
-        new Person(6, "Frank", 800d, new Department(3, "ADMIN")),
-        new Person(7, "George", 900d, new Department(3, "ADMIN")));
-
-    //simple condition
-
-    Map<Department, List<Person>> map = persons.stream().collect(groupingBy(Person::department));
-    System.out.println(map);
-
-    Map<Department, List<Integer>> map1 = persons.stream()
-        .collect(groupingBy(Person::department, mapping(Person::id, toList())));
-    System.out.println(map1);
-
-    //complex condition
-
-    Map<Object, List<Integer>> map4 = persons.stream()
-        .collect(groupingBy(person -> new Pair<>(person.salary(), person.department()),
-            mapping(Person::id, toList())));
-    System.out.println(map4);
-
-    // counting
-
-    Map<Department, Long> map2 = persons.stream()
-        .collect(groupingBy(Person::department, counting()));
-    System.out.println(map2);
-
-    Map<Double, Long> map3 = persons.stream()
-        .collect(groupingBy(Person::salary, counting()));
-    System.out.println(map3);
-
-    //average
-
-    Map<Department, Double> map5 = persons.stream()
-        .collect(groupingBy(Person::department, averagingDouble(Person::salary)));
-    System.out.println(map5);
-
-    //max salaried person
-
-    Map<Department, Optional<Person>> map6 = persons.stream()
-        .collect(groupingBy(Person::department, maxBy(Comparator.comparingDouble(Person::salary))));
-    System.out.println(map6);
-
-    //filtering java 9
-
-    Map<Department, Long> map7 = persons.stream()
-        .filter(p -> p.salary() > 300d)
-        .collect(groupingBy(Person::department, counting()));
-    System.out.println(map7);
-
-    Map<Department, Long> map8 = persons.stream()
-        .collect(groupingBy(Person::department, filtering(p -> p.salary() > 300d, counting())));
-    System.out.println(map8);
+  record Employee(String name, String department, String city, int salary) {
   }
-}
 
-record Person(int id, String name, double salary, Department department) {
-}
+  record DeptCity(String department, String city) {
+  }
 
-record Department(int id, String name) {
+  public static void main(String[] args) {
+    List<Employee> employees = List.of(
+        new Employee("Alex", "HR", "Delhi", 100),
+        new Employee("Brian", "HR", "Pune", 200),
+        new Employee("Charles", "Finance", "Delhi", 900),
+        new Employee("David", "Finance", "Delhi", 200),
+        new Employee("Edward", "Finance", "Pune", 200),
+        new Employee("Frank", "Admin", "Pune", 800),
+        new Employee("George", "Admin", "Delhi", 900));
+
+    // 1. One classifier: Map<K, List<T>>
+    Map<String, List<Employee>> byDept = employees.stream()
+        .collect(groupingBy(Employee::department));
+    System.out.println("byDept = " + byDept);
+
+    // 2. Keep only the names in each group
+    Map<String, List<String>> namesByDept = employees.stream()
+        .collect(groupingBy(Employee::department, mapping(Employee::name, toList())));
+    System.out.println("namesByDept = " + namesByDept);
+
+    // 3. Count per group
+    Map<String, Long> countByDept = employees.stream()
+        .collect(groupingBy(Employee::department, counting()));
+    System.out.println("countByDept = " + countByDept);
+
+    Map<Integer, Long> countBySalary = employees.stream()
+        .collect(groupingBy(Employee::salary, counting()));
+    System.out.println("countBySalary = " + countBySalary);
+
+    // 4. Sum and average per group
+    Map<String, Integer> totalByDept = employees.stream()
+        .collect(groupingBy(Employee::department, summingInt(Employee::salary)));
+    System.out.println("totalByDept = " + totalByDept);
+
+    Map<String, Double> averageByDept = employees.stream()
+        .collect(groupingBy(Employee::department, averagingDouble(Employee::salary)));
+    System.out.println("averageByDept = " + averageByDept);
+
+    // 5. Max per group, with Optional
+    Map<String, Optional<Employee>> topByDept = employees.stream()
+        .collect(groupingBy(Employee::department, maxBy(Comparator.comparingInt(Employee::salary))));
+    System.out.println("topByDept = " + topByDept);
+
+    Map<String, String> topNameByDept = employees.stream()
+        .collect(groupingBy(Employee::department,
+            collectingAndThen(maxBy(Comparator.comparingInt(Employee::salary)),
+                best -> best.map(Employee::name).orElse("none"))));
+    System.out.println("topNameByDept = " + topNameByDept);
+
+    // 6. Multi-level grouping and a record key
+    Map<String, Map<String, List<String>>> byDeptThenCity = employees.stream()
+        .collect(groupingBy(Employee::department,
+            groupingBy(Employee::city, mapping(Employee::name, toList()))));
+    System.out.println("byDeptThenCity = " + byDeptThenCity);
+
+    Map<DeptCity, Long> countByDeptCity = employees.stream()
+        .collect(groupingBy(e -> new DeptCity(e.department(), e.city()), counting()));
+    System.out.println("countByDeptCity = " + countByDeptCity);
+
+    // 7. Choosing the map type
+    TreeMap<String, Long> sortedByDept = employees.stream()
+        .collect(groupingBy(Employee::department, TreeMap::new, counting()));
+    System.out.println("sortedByDept = " + sortedByDept);
+
+    LinkedHashMap<String, Long> inInputOrder = employees.stream()
+        .collect(groupingBy(Employee::department, LinkedHashMap::new, counting()));
+    System.out.println("inInputOrder = " + inInputOrder);
+
+    // 8. Sorting the result by value
+    LinkedHashMap<String, Integer> highestTotalFirst = totalByDept.entrySet().stream()
+        .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+        .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> a, LinkedHashMap::new));
+    System.out.println("highestTotalFirst = " + highestTotalFirst);
+
+    // 9. partitioningBy: always two keys
+    Map<Boolean, List<String>> highEarners = employees.stream()
+        .collect(partitioningBy(e -> e.salary() > 500, mapping(Employee::name, toList())));
+    System.out.println("highEarners = " + highEarners);
+
+    Map<Boolean, List<String>> nobodyAbove1000 = employees.stream()
+        .collect(partitioningBy(e -> e.salary() > 1000, mapping(Employee::name, toList())));
+    System.out.println("nobodyAbove1000 = " + nobodyAbove1000);
+
+    // 10. Filter before vs. filter inside the group
+    Map<String, Long> above300Filtered = employees.stream()
+        .filter(e -> e.salary() > 300)
+        .collect(groupingBy(Employee::department, counting()));
+    System.out.println("above300Filtered = " + above300Filtered);
+
+    Map<String, Long> above300AllKeys = employees.stream()
+        .collect(groupingBy(Employee::department, filtering(e -> e.salary() > 300, counting())));
+    System.out.println("above300AllKeys = " + above300AllKeys);
+
+    // 11. groupingByConcurrent on a parallel stream
+    ConcurrentMap<String, Long> concurrentCount = employees.parallelStream()
+        .collect(groupingByConcurrent(Employee::department, counting()));
+    System.out.println("concurrentCount = " + concurrentCount);
+  }
 }
