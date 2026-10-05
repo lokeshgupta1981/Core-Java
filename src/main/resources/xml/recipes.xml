@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipes>
+  <recipe id="1" cuisine="italian">
+    <name>Pasta</name>
+    <minutes>20</minutes>
+    <ingredients>
+      <ingredient qty="200g">spaghetti</ingredient>
+      <ingredient qty="2">tomato</ingredient>
+    </ingredients>
+  </recipe>
+  <recipe id="2" cuisine="indian">
+    <name>Dal</name>
+    <minutes>35</minutes>
+    <ingredients>
+      <ingredient qty="1 cup">lentils</ingredient>
+      <ingredient qty="1 tsp">turmeric</ingredient>
+    </ingredients>
+  </recipe>
+</recipes>

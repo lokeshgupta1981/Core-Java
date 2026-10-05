@@ -6,6 +6,12 @@ import java.util.Set;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Assertions;
 
+/**
+ * Demonstrates computing the union of two arrays using a {@link HashSet}
+ * (dedupes automatically) and using {@link Stream#of}/{@code flatMap}.
+ * Correctness is verified with JUnit {@link Assertions} rather than printed
+ * output, so a clean (silent) run with exit code 0 means all checks passed.
+ */
 public class Union {
 
   public static void main(String[] args) {

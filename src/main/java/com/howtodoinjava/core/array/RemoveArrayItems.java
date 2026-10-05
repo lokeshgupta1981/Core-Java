@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Demonstrates removing elements from an array: by index and by value with
+ * {@link ArrayUtils#removeAll}/{@link ArrayUtils#removeAllOccurrences}, via
+ * an intermediate {@link List}, and by manually shifting elements left in a
+ * for-loop (which keeps the array length unchanged and nulls the tail).
+ */
 public class RemoveArrayItems {
   public static void main(String[] args) {
     Integer[] originalArray = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};

@@ -32,9 +32,9 @@
 ## 4\. Parsing String to Date
 
 *   [Java Date Format Validation](https://howtodoinjava.com/java/date-time/date-validation/)
-*   [Convert String to UTC Date Time](https://howtodoinjava.com/java/date-time/parse-string-to-date-time-utc-gmt/)
+*   Source code for the article [Parse a String to UTC Date Time in Java](https://howtodoinjava.com/java/date-time/parse-string-to-date-time-utc-gmt/). Example class: `ParseStringToUtc.java` (Java 21+, run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.datetime.ParseStringToUtc`).
 *   [Convert String to ZonedDateTime](https://howtodoinjava.com/java/date-time/zoneddatetime-parse/)
-*   [Convert String to LocalDateTime](https://howtodoinjava.com/java/date-time/localdatetime-parse/)
+*   Source code for the article [Convert String to LocalDateTime in Java](https://howtodoinjava.com/java/date-time/localdatetime-parse/). Example class: `ParseStringToLocalDateTime.java` (Java 21+, run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.datetime.ParseStringToLocalDateTime`).
 *   [Convert String to LocalDate](https://howtodoinjava.com/java/date-time/localdate-parse-string/)
 *   [Parsing a String to java.util.Date](https://howtodoinjava.com/java/date-time/java-parse-string-to-date/)
 *   [Java Strict, Smart and Lenient Date Resolutions](https://howtodoinjava.com/java/date-time/resolverstyle-strict-date-parsing/)
@@ -57,7 +57,7 @@
 *   [Measure Elapsed Time](https://howtodoinjava.com/java/date-time/execution-elapsed-time/)
 *   [Difference Between Two Dates](https://howtodoinjava.com/java/date-time/calculate-difference-between-two-dates-in-java/)
 *   [Count number of days between two dates](https://howtodoinjava.com/java/date-time/calculate-days-between-dates/)
-*   [Get All Dates Between Two Dates](https://howtodoinjava.com/java/date-time/dates-between-two-dates/)
+*   Source code for the article [Get All Dates Between Two Dates in Java](https://howtodoinjava.com/java/date-time/dates-between-two-dates/). Example class: `GetAllDatesBetweenTwoDates.java` (Java 21+, run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.datetime.GetAllDatesBetweenTwoDates`).
 *   [Check if Date or LocalDate is Weekend](https://howtodoinjava.com/java/date-time/check-weekend/)
 *   [Calculate business days between two dates](https://howtodoinjava.com/java/date-time/calculate-business-days/)
 *   [Add or Subtract Business Days](https://howtodoinjava.com/java/date-time/add-subtract-business-days/)

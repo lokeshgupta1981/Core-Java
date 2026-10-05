@@ -2,6 +2,11 @@ package com.howtodoinjava.core.array;
 
 import java.util.Arrays;
 
+/**
+ * Demonstrates computing the sum and average of array elements using
+ * {@link Arrays#stream}, {@link java.util.IntSummaryStatistics}, and a
+ * manual for-loop.
+ */
 public class SumAndAverageOfArray {
   public static void main(String[] args) {
 

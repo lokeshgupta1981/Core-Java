@@ -6,6 +6,12 @@ import java.util.IntSummaryStatistics;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+/**
+ * Demonstrates finding the max/min of an {@code int[]} using several
+ * approaches: {@link Arrays#stream} with {@code max()}/{@code min()},
+ * {@link IntSummaryStatistics}, {@link Collections#max}/{@code min},
+ * sorting, a manual loop, and recursion.
+ */
 public class FindMaxMin {
 
   public static void main(final String[] args) {
@@ -63,7 +69,8 @@ public class FindMaxMin {
     System.out.println(max);
     System.out.println(min);
 
-    // 6
+    // 6 - recursive approach (note: max is not reassigned here, so the
+    // printed max below still reflects section 5's value)
 
     min = getMax(items, 0, items[0]);
     min = getMin(items, 0, items[0]);

@@ -2,7 +2,12 @@ package com.howtodoinjava.core.array;
 
 import java.util.Arrays;
 
-public class ArrayCopy 
+/**
+ * Demonstrates ways to copy a Java array: {@link Object#clone()},
+ * {@link Arrays#copyOf(Object[], int)}, and {@link System#arraycopy}.
+ * These all produce shallow copies of the source array.
+ */
+public class ArrayCopy
 {
 	public static void main(String[] args) 
 	{

@@ -8,6 +8,13 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.apache.commons.lang3.ArrayUtils;
 
+/**
+ * Demonstrates converting a primitive {@code int[]} into a
+ * {@code List<Integer>} using the Stream API, Guava's {@code Ints.asList},
+ * Apache Commons Lang3, and plain iteration. The resulting lists are built
+ * but not printed; run with a debugger or add print statements to inspect
+ * them.
+ */
 public class ConvertPrimitiveArrayToList {
 
   public static void main(String[] args) {

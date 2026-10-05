@@ -1,5 +1,11 @@
 package com.howtodoinjava.core.array;
 
+/**
+ * Demonstrates array covariance: an {@code Integer[]} can be assigned to a
+ * {@code Number[]} reference, but storing an incompatible element type
+ * through that reference would throw {@link ArrayStoreException} at
+ * runtime. Here the component type is checked beforehand to avoid it.
+ */
 public class ArrayExceptions {
   public static void main(final String[] args) 
   {

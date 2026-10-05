@@ -1,5 +1,10 @@
 package com.howtodoinjava.core.array;
 
+/**
+ * Simple mutable model used by the array examples in this package to
+ * demonstrate sorting/comparing object arrays. Natural ordering is by
+ * {@code id}.
+ */
 public class User implements Comparable<User> {
 
   public long id;
