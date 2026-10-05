@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.howtodoinjava</groupId>
+    <artifactId>nosuchmethoderror</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <artifactId>app</artifactId>
+
+  <dependencies>
+    <!-- legacy-report comes first, so its greeter 1.0.0 wins (same depth, first declaration) -->
+    <dependency>
+      <groupId>com.howtodoinjava</groupId>
+      <artifactId>legacy-report</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.howtodoinjava</groupId>
+      <artifactId>welcome-service</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Copies the resolved jars to target/lib for running with java -cp -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-libs</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <includeScope>runtime</includeScope>
+              <outputDirectory>${project.build.directory}/lib</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <!-- mvn -pl app validate -Penforce : fails on the greeter version conflict -->
+    <profile>
+      <id>enforce</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforce-convergence</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <dependencyConvergence/>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <!-- mvn -pl app package -Pexclude : drops greeter 1.0.0 from legacy-report -->
+    <profile>
+      <id>exclude</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.howtodoinjava</groupId>
+          <artifactId>legacy-report</artifactId>
+          <version>1.0.0</version>
+          <exclusions>
+            <exclusion>
+              <groupId>com.howtodoinjava</groupId>
+              <artifactId>greeter</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+</project>

@@ -1,0 +1,14 @@
+// Resolves the same two libraries with Gradle (run "mvn install" in the parent folder first).
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.howtodoinjava:legacy-report:1.0.0'
+    implementation 'com.howtodoinjava:welcome-service:1.0.0'
+}
