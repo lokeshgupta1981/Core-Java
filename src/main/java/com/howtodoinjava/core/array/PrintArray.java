@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class PrintArray 
+/**
+ * Demonstrates the difference between printing an array with the default
+ * {@link Object#toString()} (unhelpful, prints type + hash) versus
+ * {@link Arrays#toString(Object[])} and {@link Arrays#deepToString(Object[])}
+ * for nested arrays.
+ */
+public class PrintArray
 {
 	public static void main(String[] args) 
 	{

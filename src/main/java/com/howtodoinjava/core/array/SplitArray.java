@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Demonstrates splitting an array into two halves, splitting at a given
+ * index, and splitting into multiple fixed-size chunks (with a smaller
+ * final chunk for the remainder), all using
+ * {@link Arrays#copyOfRange(Object[], int, int)}.
+ */
 public class SplitArray {
   public static void main(String[] args) {
     int[] original = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};

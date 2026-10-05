@@ -8,6 +8,12 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.stream.Collectors;
 
+/**
+ * Demonstrates finding the top-N largest items in an array via full
+ * sorting (stream and {@link Arrays#sort}), and without full sorting using
+ * a bounded {@link PriorityQueue} or Guava's
+ * {@link MinMaxPriorityQueue}.
+ */
 public class TopNItems {
     public static void main(String[] args) {
         Integer[] items = {0, 10, 30, 2, 7, 5, 90, 76, 100, 45, 55};

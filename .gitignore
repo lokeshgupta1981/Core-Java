@@ -33,3 +33,6 @@ release.properties
 .factorypath
 
 .idea/
+
+# Local agent notes (never publish)
+CLAUDE.md

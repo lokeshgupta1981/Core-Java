@@ -29,6 +29,7 @@
 *   [_String\[\] split(String regex, int limit)_](https://howtodoinjava.com/java/string/java-string-split-example/) – Splits the string and returns the array of sub-strings that matches the given regular expression. `'limit'` is a maximum number of elements in array.
 *   [_String\[\] split(String regex)_](https://howtodoinjava.com/java/string/java-string-split-example/) – Overload of previous method without any threshold limit.
 *   [_boolean contains(CharSequence s)_](https://howtodoinjava.com/java/string/java-string-contains-example/) – Checks whether the string contains the specified sequence of char values. If yes then it returns `true` else `false`. It throws [NullPointerException](https://howtodoinjava.com/java/exception-handling/how-to-effectively-handle-nullpointerexception-in-java/) if argument is null.
+*   Source code for the article [Java String contains(): Substring Check and Ignore Case](https://howtodoinjava.com/java/string/java-string-contains-example/). Class `Contains` (Java 21+, commons-lang3 3.18.0 or newer for `Strings.CI`), run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.string.Contains`.
 *   [_String toUpperCase(Locale locale)_](https://howtodoinjava.com/java/string/java-string-touppercase-method/) – Converts the string to upper case string using the rules defined by specified locale.
 *   [_String toUpperCase()_](https://howtodoinjava.com/java/string/java-string-touppercase-method/) – Overloaded version of previous `toUpperCase()` method with default locale.
 *   [_String toLowerCase(Locale locale)_](https://howtodoinjava.com/java/string/java-string-tolowercase-method/) – Converts the string to lower case string using the rules defined by given locale.
@@ -37,7 +38,7 @@
 
 ## String Conversions
 
-* [Convert Java String to int](https://howtodoinjava.com/java/string/convert-string-to-int/)
+* Source code for the article [Java String to int: parseInt(), valueOf() and Safe Parsing](https://howtodoinjava.com/java/string/convert-string-to-int/). Class `StringToInt` (Java 21+, commons-lang3 3.21.0), run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.string.StringToInt`.
 * [Convert int to String in Java](https://howtodoinjava.com/java/string/convert-int-to-string/)
 * [Convert String to Long](https://howtodoinjava.com/java/string/convert-string-to-long/)
 * [Convert Long to String in Java](https://howtodoinjava.com/java/string/convert-long-to-string/)
@@ -63,6 +64,7 @@
 * [Remove only trailing spaces of a String](https://howtodoinjava.com/java/string/remove-leading-trailing-whitespaces/)
 * [How to Reverse String in Java](https://howtodoinjava.com/java/puzzles/how-to-reverse-string-in-java/)
 * [Reverse words in a string in Java](https://howtodoinjava.com/java/string/reverse-words-in-string/)
+* Source code for the article [Reverse Words in a String in Java (Word Order and Letters)](https://howtodoinjava.com/java-examples/how-to-reverse-words-in-string/). Class `ReverseWordOrder` (Java 21+, commons-lang3), run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.string.ReverseWordOrder`.
 * [Reverse string in Java using recursion](https://howtodoinjava.com/java/string/reverse-string-using-recursion/)
 * [How to find duplicate words in String](https://howtodoinjava.com/java/string/how-to-find-duplicate-words-in-a-string-in-java/)
 * [How to find duplicate characters in a String](https://howtodoinjava.com/java/string/find-duplicate-characters/)

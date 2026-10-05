@@ -4,7 +4,13 @@ import java.io.Serializable;
 
 import org.apache.commons.lang3.SerializationUtils;
 
-public class ArrayDeepCopy 
+/**
+ * Demonstrates creating a deep copy of an array of objects using
+ * {@link org.apache.commons.lang3.SerializationUtils#clone}, so that
+ * mutating an element (or a nested object) in the original array does not
+ * affect the copy.
+ */
+public class ArrayDeepCopy
 {
 	public static void main(String[] args)
     {

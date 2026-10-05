@@ -6,6 +6,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Demonstrates converting between arrays and {@link List}s, including the
+ * fixed-size, array-backed list returned by {@link Arrays#asList(Object[])}
+ * (writes through to the backing array) versus an independent,
+ * growable list built via {@link Stream#collect}.
+ */
 public class ConvertBetweenArrayAndList {
   public static void main(final String[] args) {
     List<String> list = Arrays.asList("A", "B", "C");

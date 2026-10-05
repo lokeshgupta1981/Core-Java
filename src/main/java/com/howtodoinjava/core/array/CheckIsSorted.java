@@ -7,6 +7,12 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import com.howtodoinjava.core.sorting.User;
 
+/**
+ * Demonstrates several ways to check whether an array is sorted: a
+ * primitive {@code int[]} check, a generic {@link Comparable} array check,
+ * a check using a custom {@link Comparator}, and
+ * {@link ArrayUtils#isSorted(int[])} from Apache Commons Lang.
+ */
 public class CheckIsSorted {
   public static void main(final String[] args) {
     int[] array = { 1, 2, 3, 4, 5 };

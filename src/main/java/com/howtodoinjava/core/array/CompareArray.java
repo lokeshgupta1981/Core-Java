@@ -3,6 +3,12 @@ package com.howtodoinjava.core.array;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
+/**
+ * Demonstrates comparing arrays for equality: shallow comparison with
+ * {@link Arrays#equals(Object[], Object[])}, deep comparison of nested
+ * arrays with {@link Arrays#deepEquals(Object[], Object[])}, and manual
+ * element-by-element comparisons using a stream and a for-loop.
+ */
 public class CompareArray {
   public static boolean checkEqualityWithStream(final String[] a1,
                                                 final String[] a2) {
