@@ -4,7 +4,7 @@
 ----------------------
 
 *   [Creating a New File](https://howtodoinjava.com/java/io/how-to-create-a-new-file-in-java/)
-*   [Reading a File to String](https://howtodoinjava.com/java/io/java-read-file-to-string-examples/)
+*   Source code for the article [Java Read File to String: readString() and 7 More Ways](https://howtodoinjava.com/java/io/java-read-file-to-string-examples/): `ReadFileToString.java` (Java 11+, classpath example reads `src/main/resources/recipe.txt`), run with `mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.io.ReadFileToString`
 *   [Reading a File to Byte](https://howtodoinjava.com/java/io/read-file-content-into-byte-array/)
 *   [Reading a File Line by Line](https://howtodoinjava.com/java8/read-file-line-by-line/)
 *   [Reading a File from Classpath](https://howtodoinjava.com/java/io/read-file-from-classpath/)

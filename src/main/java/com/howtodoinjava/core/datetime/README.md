@@ -84,3 +84,4 @@
 *   [Java DayOfWeek](https://howtodoinjava.com/java/date-time/find-dayofweek/)
 *   [Java TemporalAdjusters](https://howtodoinjava.com/java/date-time/java8-temporal-adjusters/)
 *   [Java TemporalQuery](https://howtodoinjava.com/java/date-time/temporalquery/)
+*   Source code for the article [Java ZoneId and ZoneOffset: List of Zone IDs and Examples](https://howtodoinjava.com/java/date-time/supported-zone-ids-offsets/). Example class: `ZoneIdExamples.java` (Java 25, run with `java -cp target/classes com.howtodoinjava.core.datetime.ZoneIdExamples`).
