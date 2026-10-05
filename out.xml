@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employees>
+    <employee>
+        <id>1</id>
+        <firstName>Lokesh</firstName>
+        <lastName>Gupta</lastName>
+    </employee>
+    <employee>
+        <id>1</id>
+        <firstName>John</firstName>
+        <lastName>McLean</lastName>
+    </employee>
+</employees>
