@@ -1,4 +1,4 @@
-package com.howtodoinjava.core.array;
+package com.howtodoinjava.java25.array;
 
 import java.util.*;
 import java.util.function.*;
@@ -20,7 +20,6 @@ import java.lang.invoke.*;
 /**
  * Examples for the tutorial "Split an Array in Java: At an Index, in Halves or in Chunks".
  * https://howtodoinjava.com/java/array/split-arrays/
- * The Gatherers.windowFixed() example needs Java 24+; it is in the java-25-features module.
  */
 public class SplitArray {
     static int[][] splitAt(int[] array, int index) {
@@ -108,6 +107,14 @@ public class SplitArray {
             show("tableCount", tableCount);
             String lastTable = Arrays.toString(tables.get(2));  // "[Eva]"
             show("lastTable", lastTable);
+        }
+        {
+            String[] letters = {"a", "b", "c", "d", "e"};
+            List<List<String>> windows = Arrays.stream(letters).gather(Gatherers.windowFixed(2)).toList();   // [[a, b], [c, d], [e]]
+            show("windows", windows);
+            int[] nums = {1, 2, 3, 4};
+            List<List<Integer>> pairs = Arrays.stream(nums).boxed().gather(Gatherers.windowFixed(3)).toList();   // [[1, 2, 3], [4]]
+            show("pairs", pairs);
         }
         {
             int[] tasks = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
