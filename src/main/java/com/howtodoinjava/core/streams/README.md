@@ -43,3 +43,14 @@ Source code for the article [Java Stream Distinct by Multiple Fields (with Examp
 ```bash
 mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.streams.distinct.DistinctByMultipleFields
 ```
+* [Java Streams Tutorial: Every Stream Guide Grouped by Task](https://howtodoinjava.com/java/stream/java-streams-guide/)
+* [Java Stream API Examples: Create, Filter, Collect (Java 25)](https://howtodoinjava.com/java/stream/java-streams-by-examples/)
+* [Functional Interface in Java: Rules, JDK Types and Generics](https://howtodoinjava.com/java/stream/functional-interface-tutorial/)
+* [Primitive Type Streams in Java: IntStream, LongStream and More](https://howtodoinjava.com/java/stream/primitive-type-streams/)
+* [Filter a Map by Keys and Values Using Java Streams](https://howtodoinjava.com/java/stream/filter-map-keys-values-both/)
+* [Java Stream contains(), containsAny() and containsAll()](https://howtodoinjava.com/java/stream/contains-containsany-containsall/)
+* [Filter Nested Collections with Java Streams (flatMap, anyMatch)](https://howtodoinjava.com/java/stream/filter-nested-collections/)
+* [Java Stream mapMulti() with Examples and flatMap Comparison](https://howtodoinjava.com/java/stream/stream-mapmulti-example/)
+* [Stream Has Already Been Operated Upon or Closed: Causes and Fix](https://howtodoinjava.com/java/stream/stream-has-already-been-operated-upon-or-closed/)
+* [Java Stream With Index: Iterate Over a Stream With Indices](https://howtodoinjava.com/java/stream/iterate-over-stream-with-indices/)
+* [How to Debug Java Streams: peek() and IntelliJ Stream Trace](https://howtodoinjava.com/java/stream/debugging-java-streams/)

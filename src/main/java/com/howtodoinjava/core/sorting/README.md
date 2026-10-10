@@ -16,3 +16,9 @@ Requirements: Java 21 or later (tested on JDK 25).
 javac -d target/classes src/main/java/com/howtodoinjava/core/sorting/SortingGuide.java
 java -cp target/classes com.howtodoinjava.core.sorting.SortingGuide
 ```
+* [Java Stream Sort With Null Values: nullsFirst and nullsLast](https://howtodoinjava.com/java/sort/stream-sort-with-null-values/)
+* [Sort a String Alphabetically in Java (Arrays.sort, Streams)](https://howtodoinjava.com/java/sort/sort-string-chars-alphabetically/)
+* [Java Collections.sort(): Natural Order, Comparator, Stability](https://howtodoinjava.com/java/sort/collections-sort/)
+* [Sort Array in Java: Arrays.sort(), parallelSort() and Ranges](https://howtodoinjava.com/java/sort/java-array-sorting/)
+* [Sort a Map by Values in Java (Ascending, Descending, Top N)](https://howtodoinjava.com/java/sort/java-sort-map-by-values/)
+* [Sort a Map by Keys in Java: TreeMap and Streams](https://howtodoinjava.com/java/sort/java-sort-map-by-key/)
