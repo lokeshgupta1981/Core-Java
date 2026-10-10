@@ -1,88 +1,74 @@
 package com.howtodoinjava.core.serialization;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.google.gson.Gson;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.Base64;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.*;
+import java.time.*;
+import java.nio.file.*;
+import java.math.*;
+import java.io.*;
 
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.*;
+import java.util.stream.*;
+import java.util.function.*;
+import java.io.*;
+import java.nio.file.*;
+import java.nio.charset.*;
+import java.time.*;
+
+/**
+ * Examples for the tutorial "Serialize Object to String in Java: Base64 and JSON".
+ * https://howtodoinjava.com/java/serialization/object-to-string/
+ */
 public class SerializeObjectToString {
+    static record Person(int id, String name) implements Serializable {}
+    static class SerializationUtils {
 
-  public static void main(String[] args) throws IOException, ClassNotFoundException {
-    //1 Using Core Java
+        static String objectToString(Serializable obj) throws IOException {
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            try (ObjectOutputStream out = new ObjectOutputStream(bytes)) {
+                out.writeObject(obj);
+            }
+            return Base64.getEncoder().encodeToString(bytes.toByteArray());
+        }
 
-    Person person = new Person(1, "Lokesh");
-    String encodedString;
-    Person deserializedPerson;
-
-    /*String encodedString = SerializationUtils.objectToString(person);
-    System.out.println(encodedString);
-
-    Person deserializedPerson = (Person) SerializationUtils.stringToObject(encodedString);
-    System.out.println(deserializedPerson);*/
-
-    //2 Using Jackson
-    ObjectMapper mapper = new ObjectMapper();
-    String json = mapper.writeValueAsString(person);
-    System.out.println(json);
-
-    deserializedPerson = mapper.readValue(json, Person.class);
-    System.out.println(deserializedPerson);
-
-    //3 Gson
-    Gson gson = new Gson();
-    json = gson.toJson(person);
-    System.out.println(json);
-
-    deserializedPerson = gson.fromJson(json, Person.class);
-    System.out.println(deserializedPerson);
-
-    //4 Base64 encoded json
-    String base64EncodedString = Base64.getEncoder().encodeToString(json.getBytes());
-    System.out.println(base64EncodedString);
-
-    String decodedJson = new String(Base64.getDecoder().decode(base64EncodedString));
-    deserializedPerson = mapper.readValue(decodedJson, Person.class);
-    System.out.println(deserializedPerson);
-
-    //xml
-
-    XmlMapper xmlMapper = new XmlMapper();
-    String xml = xmlMapper.writeValueAsString(person);
-    System.out.println(xml);
-
-    deserializedPerson = xmlMapper.readValue(xml, Person.class);
-    System.out.println(deserializedPerson);
-  }
-
-  record Person(long id, String name) {
-  }
-}
-
-class SerializationUtils {
-
-  public static String objectToString(Serializable obj) throws IOException {
-
-    try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream ois = new ObjectOutputStream(baos)) {
-
-      ois.writeObject(obj);
-      return Base64.getEncoder().encodeToString(baos.toByteArray());
+        static <T> T stringToObject(String data, Class<T> type)
+        throws IOException, ClassNotFoundException {
+            byte[] bytes = Base64.getDecoder().decode(data);
+            try (ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(bytes))) {
+                in.setObjectInputFilter(ObjectInputFilter.Config.createFilter(
+                "maxdepth=5;maxbytes=10000;" + type.getName() + ";java.lang.*;!*"));
+                return type.cast(in.readObject());
+            }
+        }
     }
-  }
-
-  public static Object stringToObject(String obj)
-      throws IOException, ClassNotFoundException {
-
-    byte[] data = Base64.getDecoder().decode(obj);
-    try (ObjectInputStream ois = new ObjectInputStream(
-        new ByteArrayInputStream(data))) {
-      return ois.readObject();
+    public static void main(String[] args) throws Exception {
+        {
+            Person person = new Person(1, "Lokesh");
+            String encoded = SerializationUtils.objectToString(person);              // "rO0ABXNy..."
+            show("encoded", encoded);
+            Person restored = SerializationUtils.stringToObject(encoded, Person.class); // Person[id=1, name=Lokesh]
+            show("restored", restored);
+            boolean equal = restored.equals(person);                                 // true
+            show("equal", equal);
+        }
+        {
+            Map<String, Integer> other = new HashMap<>(Map.of("a", 1));
+            String foreign = SerializationUtils.objectToString((Serializable) other);
+            try { Person rejected = SerializationUtils.stringToObject(foreign, Person.class); show("rejected", rejected); } catch (Throwable _t) { System.out.println("rejected -> " + _t); }
+        }
     }
-  }
+
+    static void show(String name, Object value) {
+        String text = value instanceof int[] a ? Arrays.toString(a)
+        : value instanceof long[] a ? Arrays.toString(a)
+        : value instanceof double[] a ? Arrays.toString(a)
+        : value instanceof Object[] a ? Arrays.deepToString(a)
+        : value instanceof String str ? "\"" + str + "\""
+        : String.valueOf(value);
+        System.out.println(name + " = " + text);
+    }
 }
