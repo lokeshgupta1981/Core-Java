@@ -12,3 +12,11 @@
 * [Java ConcurrentSkipListMap](https://howtodoinjava.com/java/collections/concurrentskiplistmap/)
 * [Java Map computeIfAbsent()](https://howtodoinjava.com/java/collections/hashmap/map-computeifabsent/)
 * Source code for the article [Design a Good Key for HashMap in Java: Rules and Examples](https://howtodoinjava.com/java/collections/hashmap/design-good-key-for-hashmap/). Classes: `HashMapKeyDesign` (record keys, a mutable key that gets lost, equals() without hashCode(), the Account key, EnumMap and IdentityHashMap) and `HashMapKeyCollisions` (constant hashCode() with and without Comparable). Built with JDK 25 (`--release 21`); from this folder run `javac --release 21 -d /tmp/out HashMapKey*.java` and `java -cp /tmp/out com.howtodoinjava.core.collections.map.HashMapKeyDesign`.
+* [Java LinkedHashMap: Insertion Order, Access Order and LRU Cache](https://howtodoinjava.com/java/collections/linkedhashmap/)
+* [Java TreeMap: Sorted Keys, floorKey(), subMap() and headMap()](https://howtodoinjava.com/java/collections/treemap-class/)
+* [Java Hashtable: Why It Is Legacy and What to Use Instead](https://howtodoinjava.com/java/collections/hashtable-class/)
+* [TreeMap vs HashMap in Java: Differences and When to Use Each](https://howtodoinjava.com/java/collections/java-treemap-vs-hashmap/)
+* [Immutable vs Unmodifiable Map in Java: Differences and Examples](https://howtodoinjava.com/java/collections/java-immutable-and-unmodifiable-maps/)
+* [Java ConcurrentMap: Atomic Methods and Implementations](https://howtodoinjava.com/java/collections/java-concurrentmap/)
+* [Java Nested Map: Create, Update and Iterate a Map of Maps](https://howtodoinjava.com/java/collections/hashmap/java-nested-map/)
+* [Java Case-Insensitive Map: TreeMap, Commons and Spring](https://howtodoinjava.com/java/collections/case-insensitive-maps/)
