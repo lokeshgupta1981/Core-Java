@@ -77,3 +77,6 @@ mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.streams.distinc
 * [Convert Iterable or Iterator to Stream in Java (StreamSupport)](https://howtodoinjava.com/java8/iterable-iterator-to-stream/)
 * [Java IntStream Guide: range(), iterate(), sum() and More](https://howtodoinjava.com/java8/intstream-examples/)
 * [Java Boxed Stream: IntStream boxed() to List, Set and Array](https://howtodoinjava.com/java8/java8-boxed-intstream/)
+* [How to Sort a Stream in Java: Numbers, Strings, Objects, Maps](https://howtodoinjava.com/java8/stream-sorting/)
+* [Java Stream Reuse: How to Consume a Stream Multiple Times](https://howtodoinjava.com/java8/java-stream-reuse/)
+* [Java Stream max(): Find the Largest Element With a Comparator](https://howtodoinjava.com/java8/java-stream-max/)

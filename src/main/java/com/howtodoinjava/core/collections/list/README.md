@@ -38,3 +38,5 @@ mvn -q compile exec:java -Dexec.mainClass=com.howtodoinjava.core.collections.lis
 * [Java LinkedList Class: Methods, Deque Usage and Performance](https://howtodoinjava.com/java/collections/java-linkedlist-class/)
 * [Java CopyOnWriteArrayList: Snapshot Iterators and Use Cases](https://howtodoinjava.com/java/collections/java-copyonwritearraylist/)
 * [Collect Stream to Immutable List: toList vs toUnmodifiableList](https://howtodoinjava.com/java/collections/collect-stream-into-immutable-collection/)
+* [ArrayList removeIf() in Java: Remove Elements by Condition](https://howtodoinjava.com/java/collections/arraylist/arraylist-removeif/)
+* [ArrayList forEach() in Java: Lambdas, Limits and Examples](https://howtodoinjava.com/java/collections/arraylist/arraylist-foreach/)

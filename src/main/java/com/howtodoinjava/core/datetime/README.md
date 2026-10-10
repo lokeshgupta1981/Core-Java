@@ -61,3 +61,4 @@
 * [First and Last Day of Week, Month or Year in Java](https://howtodoinjava.com/java/date-time/first-last-day-of-week-month-year/)
 
 The Spring, Servlet, Quartz and JPA snippets from the tutorials are not included here because this module has no Spring or Quartz dependencies.
+* [Java DayOfWeek Enum: Methods, Day Names and Examples](https://howtodoinjava.com/java/date-time/find-dayofweek/)
