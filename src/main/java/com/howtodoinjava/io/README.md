@@ -89,3 +89,6 @@
 *   [Read typesafe input using Scanner class](https://howtodoinjava.com/java/io/read-typesafe-input-scanner-class/)
 *   [Encrypting and Decrypting Files](https://howtodoinjava.com/java/java-security/java-aes-encryption-example/)
 *   [Reading and Writing Properties Files](https://howtodoinjava.com/java/io/read-write-properties-file/)
+* [Java IO Tutorial: Files, Streams and NIO in Java 25](https://howtodoinjava.com/java/io/java-io/)
+* [Find a File in a Directory and Subdirectories in Java](https://howtodoinjava.com/java/io/find-file-in-directory-subdirectories/)
+* [Java FileChannel transferTo() and transferFrom() Examples](https://howtodoinjava.com/java/nio/transfer-data-between-channels/)
