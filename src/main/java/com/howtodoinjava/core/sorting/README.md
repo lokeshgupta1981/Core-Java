@@ -22,3 +22,5 @@ java -cp target/classes com.howtodoinjava.core.sorting.SortingGuide
 * [Sort Array in Java: Arrays.sort(), parallelSort() and Ranges](https://howtodoinjava.com/java/sort/java-array-sorting/)
 * [Sort a Map by Values in Java (Ascending, Descending, Top N)](https://howtodoinjava.com/java/sort/java-sort-map-by-values/)
 * [Sort a Map by Keys in Java: TreeMap and Streams](https://howtodoinjava.com/java/sort/java-sort-map-by-key/)
+* [Sort by Multiple Fields in Java With Comparator thenComparing()](https://howtodoinjava.com/java/sort/sort-on-multiple-fields/)
+* [Sort a List in Java With Comparable and Comparator](https://howtodoinjava.com/java/sort/comparable-comparator/)
